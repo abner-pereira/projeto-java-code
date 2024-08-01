@@ -59,5 +59,57 @@ public class Main {
         final double varCp3 = 9.7;
         varResp = varCp2 <= varCp3 && varCp1 >= varCp3;
         System.out.println("Comparativo 2 (" + varCp3 + " BETWEEN " + varCp1 + " AND " + varCp2 + "): " + varResp);
+
+        //Condicional (IF, ELSE IF e ELSE)
+        boolean varJogador1 = false;
+        boolean varJogador2 = true;
+
+        if (!varJogador1) {
+            System.out.println("Jogador 1 habilitado: " + varJogador1);
+        }
+
+        if (varJogador1 == varJogador2) {
+            //Faça algo
+        } else {
+            System.out.println("Jogador 1 e 2 diferentes: " + varJogador2);
+        }
+
+        //Switch
+        int varStCivil = 3;
+
+        switch (varStCivil) {
+            case 1:
+                System.out.println("Estado Civíl: Casado");
+                break;
+            case 2:
+                System.out.println("Estado Civíl: Separado");
+                break;
+            case 3:
+                System.out.println("Estado Civíl: Viúvo");
+                break;
+            default:
+                System.out.println("Estado Civíl: Solteiro");
+                break;
+        }
+
+        //Ternário
+        char varSexo = 'M';
+        String varDnSexual = varSexo == 'M' ? "Masculino" : "Feminino";
+
+        System.out.println("Sexo Definido: " + varDnSexual);
+
+        //Array simples
+        String[] varPecas = {"Prato", "Colher", "Garfo", "Guarda-napo"};
+
+        System.out.println("Itens para Comprar: " + varPecas[1] + " e " + varPecas[3]);
+
+        //Array multidimensional
+        String[][] varClientes = {
+                {"A001", "Carlos Alvarenga"},
+                {"A002", "Monica Santos"},
+                {"C003", "Neide Mello"},
+        };
+
+        System.out.println("Cliente Premiado => ID: " + varClientes[2][0] + ", Nome: " + varClientes[2][1]);
     }
 }
