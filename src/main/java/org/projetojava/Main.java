@@ -111,5 +111,38 @@ public class Main {
         };
 
         System.out.println("Cliente Premiado => ID: " + varClientes[2][0] + ", Nome: " + varClientes[2][1]);
+
+        //Loops (While, Do-while e For)
+        //While
+        int varCount = 0;
+        while (varCount < 2) {
+            System.out.println("Dias Corridos: " + varCount);
+            varCount++;
+        }
+
+        int[] varNmPrimo = {1, 2, 3, 5, 7};
+        varCount = 0;
+        while (varCount < varNmPrimo.length) {
+            System.out.println("Número Primo => Posição: " + varCount + ", Valor: " + varNmPrimo[varCount]);
+            varCount++;
+        }
+
+        //Do-while
+        varCount = varNmPrimo.length;
+        varCount--;
+        do {
+            System.out.println("Número Primo Invertido => Valor: " + varNmPrimo[varCount]);
+            varCount--;
+        } while (varCount >= 0);
+
+        //For
+        for (int idx = 0; idx < varNmPrimo.length; idx++) {
+            varCount = 0;
+            varCount = varNmPrimo[idx] % 2;
+
+            if (varCount != 0) {
+                System.out.println("Número Primo Ímpar => Valor: " + varNmPrimo[idx]);
+            }
+        }
     }
 }
