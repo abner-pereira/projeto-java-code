@@ -1,5 +1,26 @@
 package org.projetojava;
 
+class Jogador {
+    private String nome;
+    private int pontuacao;
+
+    int getPontuacao() {
+        return this.pontuacao;
+    }
+
+    void addPontuacao(int pontuacao) {
+        this.pontuacao += pontuacao;
+    }
+
+    String getNome() {
+        return this.nome;
+    }
+
+    void setName(String nome) {
+        this.nome = nome;
+    }
+}
+
 public class Main {
     public static void main(String[] args) {
         //Variável
@@ -144,5 +165,17 @@ public class Main {
                 System.out.println("Número Primo Ímpar => Valor: " + varNmPrimo[idx]);
             }
         }
+
+        //Objeto e Classe
+        Jogador playerOne = new Jogador();
+        playerOne.setName("Alura Now");
+        playerOne.addPontuacao(10);
+
+        Jogador playerTwo = new Jogador();
+        playerTwo.setName("Rocketseat");
+        playerTwo.addPontuacao(15);
+
+        System.out.println("Player 1 => Nome: " + playerOne.getNome() + ", Pontos: " + playerOne.getPontuacao());
+        System.out.println("Player 2 => Nome: " + playerTwo.getNome() + ", Pontos: " + playerTwo.getPontuacao());
     }
 }
