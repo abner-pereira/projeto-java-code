@@ -4,6 +4,16 @@ class Jogador {
     private String nome;
     private int pontuacao;
 
+    //Construtor
+    Jogador() {
+    }
+
+    //Sobrecarga de Construtor
+    Jogador(String nome, int pontuacao) {
+        this.nome = nome;
+        this.pontuacao = pontuacao;
+    }
+
     int getPontuacao() {
         return this.pontuacao;
     }
@@ -177,5 +187,12 @@ public class Main {
 
         System.out.println("Player 1 => Nome: " + playerOne.getNome() + ", Pontos: " + playerOne.getPontuacao());
         System.out.println("Player 2 => Nome: " + playerTwo.getNome() + ", Pontos: " + playerTwo.getPontuacao());
+
+        //Construtor/Sobrecarga de Construtor
+        Jogador playerThree = new Jogador("Codans", 18);
+        Jogador playerFour = new Jogador("Congenial", 20);
+
+        System.out.println("Player 3 Convidado => Nome: " + playerThree.getNome());
+        System.out.println("Player 4 Convidado => Nome: " + playerFour.getNome());
     }
 }
