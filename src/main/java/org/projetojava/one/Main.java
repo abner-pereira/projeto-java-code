@@ -1,35 +1,6 @@
-package org.projetojava;
+package org.projetojava.one;
 
-class Jogador {
-    private String nome;
-    private int pontuacao;
-
-    //Construtor
-    Jogador() {
-    }
-
-    //Sobrecarga de Construtor
-    Jogador(String nome, int pontuacao) {
-        this.nome = nome;
-        this.pontuacao = pontuacao;
-    }
-
-    int getPontuacao() {
-        return this.pontuacao;
-    }
-
-    void addPontuacao(int pontuacao) {
-        this.pontuacao += pontuacao;
-    }
-
-    String getNome() {
-        return this.nome;
-    }
-
-    void setName(String nome) {
-        this.nome = nome;
-    }
-}
+import org.projetojava.two.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -194,5 +165,15 @@ public class Main {
 
         System.out.println("Player 3 Convidado => Nome: " + playerThree.getNome());
         System.out.println("Player 4 Convidado => Nome: " + playerFour.getNome());
+
+        //Sobrecarga de Método
+        String propPlayerOne = playerOne.getPropriedade();
+        System.out.println("Player 1 Propriedade => \"Full\": " + propPlayerOne);
+
+        String propPlayerTwo = playerTwo.getPropriedade("NOME");
+        System.out.println("Player 2 Propriedade => \"Nome\": " + propPlayerTwo);
+
+        //Modificadores de Acesso - Visibilidade
+        Partida partidaOne = new Partida();
     }
 }
