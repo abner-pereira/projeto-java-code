@@ -1,5 +1,6 @@
 package org.projetojava.one;
 
+import org.projetojava.three.*;
 import org.projetojava.two.*;
 
 public class Main {
@@ -174,6 +175,26 @@ public class Main {
         System.out.println("Player 2 Propriedade => \"Nome\": " + propPlayerTwo);
 
         //Modificadores de Acesso - Visibilidade
-        Partida partidaOne = new Partida();
+        Jogador jogOne = new Jogador();
+        Jogador jogTwo = new Jogador();
+
+        jogOne.addPontuacao(10);
+        jogTwo.addPontuacao(15);
+
+        Partida partidaOne = new Partida(jogOne, jogTwo);
+        //Obs.: Não é possível acessar os atributos e métodos do tipo "package-private"
+
+        //Herança
+        ContaPessoaFísica ctFisica = new ContaPessoaFísica(6001, 202035, "77777777777");
+        ContaPessoaJuridica ctJuridica = new ContaPessoaJuridica(6002, 303155, "99999999999999");
+
+        ctFisica.addSaldo(1000.75);
+        ctJuridica.addSaldo(2075.98);
+
+        String[] ctFisicaDado = ctFisica.getDados();
+        String[] ctJuridicaDado = ctJuridica.getDados();
+
+        System.out.println("Conta Física => CPF: " + ctFisicaDado[0] + "; Saldo: " + ctFisicaDado[3]);
+        System.out.println("Conta Jurídica => CNPJ: " + ctJuridicaDado[0] + "; Saldo: " + ctJuridicaDado[3]);
     }
 }
