@@ -2,6 +2,7 @@ package org.projetojava.one;
 
 import org.projetojava.three.*;
 import org.projetojava.two.*;
+import org.projetojava.four.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -188,13 +189,26 @@ public class Main {
         ContaPessoaFísica ctFisica = new ContaPessoaFísica(6001, 202035, "77777777777");
         ContaPessoaJuridica ctJuridica = new ContaPessoaJuridica(6002, 303155, "99999999999999");
 
-        ctFisica.addSaldo(1000.75);
-        ctJuridica.addSaldo(2075.98);
+        //Polimorfismo
+        ctFisica.addSaldo(1000.50);
+        ctJuridica.addSaldo(2075.50);
 
         String[] ctFisicaDado = ctFisica.getDados();
         String[] ctJuridicaDado = ctJuridica.getDados();
 
         System.out.println("Conta Física => CPF: " + ctFisicaDado[0] + "; Saldo: " + ctFisicaDado[3]);
         System.out.println("Conta Jurídica => CNPJ: " + ctJuridicaDado[0] + "; Saldo: " + ctJuridicaDado[3]);
+
+        //Classe Abstrata vs Classe Concreta
+        //Classe Abstrata --> Não pode ser instanciada
+        //Animal genAnimal = new Animal("Gato");       //Error
+        Manifero aniHomem = new Manifero("Ser Humano", 3);
+        Manifero aniCanguru = new Manifero("Canguru", 1);
+        Manifero aniEquidna = new Manifero("Equidna", 0);
+
+        //Interface
+        System.out.println("Manifero 1 => " + aniHomem.showDado());
+        System.out.println("Manifero 2 => " + aniCanguru.showDado());
+        System.out.println("Manifero 3 => " + aniEquidna.showDado());
     }
 }

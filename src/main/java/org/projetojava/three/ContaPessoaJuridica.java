@@ -8,6 +8,14 @@ public class ContaPessoaJuridica extends Conta {
         this.noCNPJ = Long.parseLong(noCNPJ);
     }
 
+    //Sobreposição de Método (Polimorfismo)
+    @Override
+    public void addSaldo(double saldo) {
+        final double txCusto = 20;
+        final double percFinal = 1 - (txCusto / 100);
+        super.addSaldo(saldo * percFinal);
+    }
+
     public String[] getDados() {
         String[] resDado = {
                 Long.toString(this.noCNPJ),

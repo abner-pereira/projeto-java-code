@@ -9,7 +9,7 @@ Visibilidade:
 + package-private (no explicit modifier)
 + private
 
-+1 -> Podem ser usados em Classes, Métodos e Atributos
++1 -> Podem ser usados em Classes, Interfaces, Métodos e Atributos
 +2 -> package-private -> Visibilidade somente dentro do Pacote
 */
 
