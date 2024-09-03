@@ -1,5 +1,6 @@
 package org.projetojava.one;
 
+import org.projetojava.android.*;
 import org.projetojava.three.*;
 import org.projetojava.two.*;
 import org.projetojava.four.*;
@@ -210,5 +211,18 @@ public class Main {
         System.out.println("Manifero 1 => " + aniHomem.showDado());
         System.out.println("Manifero 2 => " + aniCanguru.showDado());
         System.out.println("Manifero 3 => " + aniEquidna.showDado());
+
+        //Exercicios Curso Android
+        Carro carroA = new Carro("BMW 320i", 4);
+        Carro carroB = new Carro("Toyota Hilux SR", 4);
+
+        carroA.acelerar();
+        carroB.acelerar(5);
+
+        Moto motoA = new Moto("CG 150", 2);
+        Moto motoB = new Moto("Honda Biz", 2);
+
+        motoA.acelerar();
+        motoB.acelerar(10);
     }
 }
