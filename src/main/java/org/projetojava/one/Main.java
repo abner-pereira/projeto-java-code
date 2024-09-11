@@ -55,15 +55,15 @@ public class Main {
         boolean varNtBaixa = false;
         System.out.println("Aprovado (Sem Nt. Baixa)? " + !varNtBaixa);
 
-        final double varCp1 = 10;
-        final double varCp2 = 9.5;
+        final double VAR_CP1 = 10;
+        final double VAR_CP2 = 9.5;
 
-        boolean varResp = varCp1 < varCp2;
-        System.out.println("Comparativo 1 (" + varCp1 + " < " + varCp2 + "): " + varResp);
+        boolean varResp = VAR_CP1 < VAR_CP2;
+        System.out.println("Comparativo 1 (" + VAR_CP1 + " < " + VAR_CP2 + "): " + varResp);
 
-        final double varCp3 = 9.7;
-        varResp = varCp2 <= varCp3 && varCp1 >= varCp3;
-        System.out.println("Comparativo 2 (" + varCp3 + " BETWEEN " + varCp1 + " AND " + varCp2 + "): " + varResp);
+        final double VAR_CP3 = 9.7;
+        varResp = VAR_CP2 <= VAR_CP3 && VAR_CP1 >= VAR_CP3;
+        System.out.println("Comparativo 2 (" + VAR_CP3 + " BETWEEN " + VAR_CP1 + " AND " + VAR_CP2 + "): " + varResp);
 
         //Condicional (IF, ELSE IF e ELSE)
         boolean varJogador1 = false;
@@ -226,3 +226,6 @@ public class Main {
         motoB.acelerar(10);
     }
 }
+
+// PAREI NA...
+// https://dev.java/learn/language-basics/primitive-types/#int-literals
