@@ -5,6 +5,8 @@ import org.projetojava.three.*;
 import org.projetojava.two.*;
 import org.projetojava.four.*;
 
+import java.math.BigInteger;
+
 public class Main {
     public static void main(String[] args) {
         //Variável
@@ -31,6 +33,22 @@ public class Main {
 
         System.out.println("Dias corridos: " + varByte);
         System.out.println("Preço de Venda: R$ " + varDouble);
+
+        //Literais (Integer e Float)
+        int varHexa = 0x1a;      //Prefixo 0x
+        int varBinary = 0b1111;  //Prefixo 0b
+        float varUnders = 10_457.34_9f;
+
+        System.out.println("Hexadecimal: 0x1a => " + varHexa);
+        System.out.println("Binário: 0b1111 => " + varBinary);
+        System.out.println("Underscore: 10_457.34_9f => " + varUnders);
+
+        //Literais (Char e String)
+        char varCharQ = 'D';           //Aspas simples
+        String varStringQ = "Letra D"; //Aspas duplas
+        String varStringT = "Letras\tdo\tAlfabeto => \"A-Z\"";
+
+        System.out.println(varStringT);
 
         //Wrapper Classes
         String varStringC = "Antônio Silva";
@@ -106,7 +124,13 @@ public class Main {
         //Array simples
         String[] varPecas = {"Prato", "Colher", "Garfo", "Guarda-napo"};
 
-        System.out.println("Itens para Comprar: " + varPecas[1] + " e " + varPecas[3]);
+        String[] varPecasRev = new String[4]; //Mesmo tamanho acima
+        varPecasRev[0] = "Guarda-napo";
+        varPecasRev[1] = "Garfo";
+        varPecasRev[2] = "Colher";
+        varPecasRev[3] = "Prato";
+
+        System.out.println("Itens para Comprar: " + varPecas[1] + " e " + varPecasRev[1]);
 
         //Array multidimensional
         String[][] varClientes = {
@@ -115,7 +139,28 @@ public class Main {
                 {"C003", "Neide Mello"},
         };
 
+        String[][] varClientesRev = new String[3][2];
+        varClientesRev[0] = varClientesRev[2];
+        varClientesRev[1] = varClientesRev[0];
+        varClientesRev[2] = varClientesRev[1];
+
         System.out.println("Cliente Premiado => ID: " + varClientes[2][0] + ", Nome: " + varClientes[2][1]);
+
+        //Array Manipulação
+        char[] varAlfa = {'A', 'B', 'C', 'D', 'E'};
+        char[] varAlfaPlus = {'F', 'G', 'H'};
+        char[] varAlfaSix = new char[6];
+
+        //Copiando Array
+        System.arraycopy(varAlfa, 2, varAlfaSix, 0, 3);
+        System.arraycopy(varAlfaPlus, 0, varAlfaSix, 3, 3);
+
+        String varStrAlfa = "";
+        for (char letra : varAlfaSix) {
+            varStrAlfa += letra + "\t";
+        }
+
+        System.out.println("Letras Escolhidas: " + varStrAlfa);
 
         //Loops (While, Do-while e For)
         //While
@@ -228,4 +273,4 @@ public class Main {
 }
 
 // PAREI NA...
-// https://dev.java/learn/language-basics/primitive-types/#int-literals
+// https://dev.java/learn/language-basics/arrays/#manipulating
