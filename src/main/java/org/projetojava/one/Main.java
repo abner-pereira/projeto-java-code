@@ -21,6 +21,12 @@ public class Main {
 
         System.out.println("Capital: " + CAPITAL + ", Nota Turismo: " + MAX_NOTA);
 
+        //VAR - Variaveis locais (Sem Tipagem)
+        var nomeCompleto = nome + " Santos";
+        var anoNasc = java.time.Year.now().getValue() - idade;
+
+        System.out.println("Nome Completo: " + nomeCompleto + ", Ano Nascimento: " + anoNasc);
+
         //Tipos primitivos
         byte varByte = 120;
         short varShort = 12005;
@@ -151,7 +157,7 @@ public class Main {
         char[] varAlfaPlus = {'F', 'G', 'H'};
         char[] varAlfaSix = new char[6];
 
-        //Copiando Array
+        //Copiando Array (Classe System)
         System.arraycopy(varAlfa, 2, varAlfaSix, 0, 3);
         System.arraycopy(varAlfaPlus, 0, varAlfaSix, 3, 3);
 
@@ -161,6 +167,31 @@ public class Main {
         }
 
         System.out.println("Letras Escolhidas: " + varStrAlfa);
+
+        //Métodos Estáticos da Classe Arrays
+        //Busca
+        int varPos = java.util.Arrays.binarySearch(varAlfaSix, 'G');
+
+        System.out.println("Letra Encontrada: " +
+                (varPos < 0 ? "Error" : varAlfaSix[varPos]));
+
+        //Cópia
+        char[] varAlfaTen = java.util.Arrays.copyOf(varAlfaSix, 10);
+        varAlfaTen[6] = 'M';
+        varAlfaTen[7] = 'L';
+        varAlfaTen[8] = 'N';
+        varAlfaTen[9] = 'A';
+
+        //Conversão para String
+        String varElemTen = java.util.Arrays.toString(varAlfaTen);
+
+        System.out.println("Novas Letras: " + varElemTen);
+
+        //Ordenação
+        java.util.Arrays.sort(varAlfaTen);
+        varElemTen = java.util.Arrays.toString(varAlfaTen);
+
+        System.out.println("Novas Letras Ordenadas: " + varElemTen);
 
         //Loops (While, Do-while e For)
         //While
@@ -273,4 +304,4 @@ public class Main {
 }
 
 // PAREI NA...
-// https://dev.java/learn/language-basics/arrays/#manipulating
+// https://dev.java/learn/language-basics/using-operators/#intro
