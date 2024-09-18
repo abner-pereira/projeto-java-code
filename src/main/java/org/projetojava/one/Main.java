@@ -226,6 +226,112 @@ public class Main {
             }
         }
 
+        //For -> Enhanced
+        var idxRacional = 0;
+        double[] varNmRacional = new double[3];
+        varNmRacional[0] = 0.2;
+        varNmRacional[1] = 0.06;
+        varNmRacional[2] = 0.0045;
+
+        for (double nmRacional : varNmRacional) {
+            idxRacional++;
+            System.out.println("NÚmero Racional => Posição: " + idxRacional + ", Valor: " + nmRacional);
+        }
+
+        //Break (For, While ou Do-While)
+        final int BASE_VALOR = 18;
+        final int BASE_MULTIPLICACAO = 5;
+        for (; ; ) { //Loop infinito
+            System.out.println("Tabuada Multiplicação => " + BASE_VALOR + " x " + BASE_MULTIPLICACAO + " = "
+                    + (BASE_VALOR * BASE_MULTIPLICACAO));
+            break;
+        }
+
+        final int BASE_DIVISAO = 3;
+        while (true) { //Loop infinito
+            System.out.println("Tabuada Divisão => " + BASE_VALOR + " / " + BASE_DIVISAO + " = " +
+                    (BASE_VALOR / BASE_DIVISAO));
+            break;
+        }
+
+        final int BASE_ADICAO = 5;
+        do { //Loop infinito
+            System.out.println("Tabuada Adição => " + BASE_VALOR + " + " + BASE_ADICAO + " = " +
+                    (BASE_VALOR + BASE_ADICAO));
+            break;
+        } while (true);
+
+        //Break Nomeado (For, While ou Do-While)
+        labelStop:
+        do { //Loop infinito
+            while (true) { //Loop infinito
+                for (; ; ) { //Loop infinito
+                    System.out.println("Estudos => Status: \"Ativo\"");
+                    break labelStop;
+                }
+            }
+        } while (true);
+
+        //Continue (For, While ou Do-While)
+        String[][] varLetterGrp = new String[3][2];
+        varLetterGrp[0][0] = "A";
+        varLetterGrp[0][1] = "B";
+        varLetterGrp[1][0] = "C";
+        varLetterGrp[1][1] = "D";
+        varLetterGrp[2][0] = "E";
+        varLetterGrp[2][1] = "F";
+
+        for (String[] letterGrp : varLetterGrp) {
+            //IF sem {} é possível MAS com cuidado
+            if (letterGrp[0] != "A")
+                continue;
+
+            System.out.println("Conjunto A1 => " + java.util.Arrays.toString(letterGrp));
+        }
+
+        int idxLetterGrp = varLetterGrp.length;
+        while (idxLetterGrp >= 0) {
+            idxLetterGrp--;
+            //IF sem {} é possível MAS com cuidado
+            if (idxLetterGrp < 0)
+                continue;
+
+            if (varLetterGrp[idxLetterGrp][0] != "C")
+                continue;
+
+            System.out.println("Conjunto A2 => " + java.util.Arrays.toString(varLetterGrp[idxLetterGrp]));
+        }
+
+        idxLetterGrp = varLetterGrp.length;
+        do {
+            idxLetterGrp--;
+            //IF sem {} é possível MAS com cuidado
+            if (idxLetterGrp < 0)
+                continue;
+
+            if (varLetterGrp[idxLetterGrp][0] != "E")
+                continue;
+
+            System.out.println("Conjunto A3 => " + java.util.Arrays.toString(varLetterGrp[idxLetterGrp]));
+        } while (idxLetterGrp >= 0);
+
+        //Continue Nomeado (For, While ou Do-While)
+        idxLetterGrp = varLetterGrp.length;
+        labelContinue:
+        do {
+            idxLetterGrp--;
+            //IF sem {} é possível MAS com cuidado
+            if (idxLetterGrp < 0)
+                continue labelContinue;
+
+            for (String letter : varLetterGrp[idxLetterGrp]) {
+                if (letter == "C") {
+                    System.out.println("Letra Subconjunto Sorteada: " + letter);
+                    continue labelContinue;
+                }
+            }
+        } while (idxLetterGrp >= 0);
+
         //Objeto e Classe
         Jogador playerOne = new Jogador();
         playerOne.setName("Alura Now");
@@ -304,4 +410,4 @@ public class Main {
 }
 
 // PAREI NA...
-// https://dev.java/learn/language-basics/controlling-flow/#if-then
+// https://dev.java/learn/language-basics/controlling-flow/#return
