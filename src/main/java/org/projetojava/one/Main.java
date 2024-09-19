@@ -104,7 +104,7 @@ public class Main {
         }
 
         //Switch
-        int varStCivil = 3;
+        final int varStCivil = 3;
 
         switch (varStCivil) {
             case 1:
@@ -120,6 +120,91 @@ public class Main {
                 System.out.println("Estado Civíl: Solteiro");
                 break;
         }
+
+        final int varMes = 5;
+        //NÃO é uma BOA PRÁTICA
+        switch (varMes) {
+            case 1:
+            case 2:
+            case 3:
+                System.out.println("Trimestre: Primeiro");
+                break;
+            case 4:
+            case 5:
+            case 6:
+                System.out.println("Trimestre: Segundo");
+                break;
+            case 7:
+            case 8:
+            case 9:
+                System.out.println("Trimestre: Terceiro");
+                break;
+            case 10:
+            case 11:
+            case 12:
+                System.out.println("Trimestre: Quarto");
+                break;
+            default:
+                break;
+        }
+
+        //Switch (Com retorno -> YIELD)
+        final int varAno = 2000;
+        final int varAnoBi = varAno % 4;
+
+        String varAnoBiTxt =
+                switch (varAnoBi) {
+                    case 0:
+                        yield "Bissexto";
+                    default:
+                        yield "Comum";
+                };
+
+        System.out.println("Info Ano: " + varAno + " - " + varAnoBiTxt);
+
+        //Switch (Expressão)
+        switch (varMes) {
+            case 1, 2, 3 -> {
+                System.out.println("Período Trimestral: JAN a MAR");
+            }
+            case 4, 5, 6 -> {
+                System.out.println("Período Trimestral: ABR a JUN");
+            }
+            case 7, 8, 9 -> System.out.println("Período Trimestral: JUL a SET");
+            case 10, 11, 12 -> System.out.println("Período Trimestral: OUT a DEZ");
+        }
+
+        //Switch (Expressão com retorno -> COM ou SEM YIELD)
+        String varMesDesc =
+                switch (varMes) {
+                    case 1 -> {
+                        yield "JAN"; //Retorna através do YIELD
+                    }
+                    case 2 -> {
+                        yield "FEV";
+                    }
+                    case 3 -> {
+                        yield "MAR";
+                    }
+                    case 4 -> {
+                        yield "ABR";
+                    }
+                    case 5 -> {
+                        yield "MAI";
+                    }
+                    case 6 -> {
+                        yield "JUN";
+                    }
+                    case 7 -> "JUL";  //Retorna diretamente
+                    case 8 -> "AGO";
+                    case 9 -> "SET";
+                    case 10 -> "OUT";
+                    case 11 -> "NOV";
+                    case 12 -> "DEZ";
+                    default -> "NULL";
+                };
+
+        System.out.println("Mês Descritivo: " + varMesDesc);
 
         //Ternário
         char varSexo = 'M';
@@ -410,4 +495,4 @@ public class Main {
 }
 
 // PAREI NA...
-// https://dev.java/learn/language-basics/controlling-flow/#return
+// https://dev.java/learn/classes-objects/creating-classes/#declaring-classes
