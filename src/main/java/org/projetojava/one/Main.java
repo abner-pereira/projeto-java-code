@@ -104,9 +104,9 @@ public class Main {
         }
 
         //Switch
-        final int varStCivil = 3;
+        final int ST_CIVIL = 3;
 
-        switch (varStCivil) {
+        switch (ST_CIVIL) {
             case 1:
                 System.out.println("Estado Civíl: Casado");
                 break;
@@ -121,9 +121,9 @@ public class Main {
                 break;
         }
 
-        final int varMes = 5;
+        final int MES = 5;
         //NÃO é uma BOA PRÁTICA
-        switch (varMes) {
+        switch (MES) {
             case 1:
             case 2:
             case 3:
@@ -149,21 +149,21 @@ public class Main {
         }
 
         //Switch (Com retorno -> YIELD)
-        final int varAno = 2000;
-        final int varAnoBi = varAno % 4;
+        final int ANO = 2000;
+        final int ANO_BI = ANO % 4;
 
         String varAnoBiTxt =
-                switch (varAnoBi) {
+                switch (ANO_BI) {
                     case 0:
                         yield "Bissexto";
                     default:
                         yield "Comum";
                 };
 
-        System.out.println("Info Ano: " + varAno + " - " + varAnoBiTxt);
+        System.out.println("Info Ano: " + ANO + " - " + varAnoBiTxt);
 
         //Switch (Expressão)
-        switch (varMes) {
+        switch (MES) {
             case 1, 2, 3 -> {
                 System.out.println("Período Trimestral: JAN a MAR");
             }
@@ -176,7 +176,7 @@ public class Main {
 
         //Switch (Expressão com retorno -> COM ou SEM YIELD)
         String varMesDesc =
-                switch (varMes) {
+                switch (MES) {
                     case 1 -> {
                         yield "JAN"; //Retorna através do YIELD
                     }
@@ -495,4 +495,4 @@ public class Main {
 }
 
 // PAREI NA...
-// https://dev.java/learn/classes-objects/creating-classes/#declaring-classes
+// https://dev.java/learn/classes-objects/creating-objects/

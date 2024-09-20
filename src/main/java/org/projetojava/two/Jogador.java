@@ -47,4 +47,19 @@ public class Jogador {
         }
         return res;
     }
+
+    //Assinatura de Método
+    //Composição: Nome do Método + Tipagem dos Parâmetros
+    public void showOverPontuation(int overPoints) {
+        return;
+    }
+
+    //Gera um ERRO -> Mesma ASSNATURA acima
+    //public void showOverPontuation(int points) {
+    //    return;
+    //}
+
+    public void showOverPontuation(long overPoints) {
+        return;
+    }
 }
