@@ -3,7 +3,12 @@ package org.projetojava.two;
 import java.util.Random;
 
 /*
-Visibilidade:
+*** Visibilidade:
+** At the top level:
++ public
++ package-private (no explicit modifier)
+
+** At the member level:
 + public
 + protected
 + package-private (no explicit modifier)
