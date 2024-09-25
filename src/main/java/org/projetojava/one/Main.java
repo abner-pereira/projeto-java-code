@@ -4,6 +4,7 @@ import org.projetojava.android.*;
 import org.projetojava.three.*;
 import org.projetojava.two.*;
 import org.projetojava.four.*;
+import org.projetojava.five.*;
 
 import java.math.BigInteger;
 
@@ -453,6 +454,18 @@ public class Main {
         Partida partidaOne = new Partida(jogOne, jogTwo);
         //Obs.: Não é possível acessar os atributos e métodos do tipo "package-private"
 
+        //Static (Field and Method)
+        for (int idxStatic = 0; idxStatic <= 1; idxStatic++) {
+            Operacao.setID();
+            System.out.println("Estático Construtor => ID: " + Operacao.getID());
+        }
+
+        System.out.println(
+                "Estático Operação => Multiplicação (Resultado): " +
+                        Operacao.factory().executaOperacao(3, 4, '*') +
+                        ", ID: " + Operacao.getID()
+        );
+
         //Herança
         ContaPessoaFísica ctFisica = new ContaPessoaFísica(6001, 202035, "77777777777");
         ContaPessoaJuridica ctJuridica = new ContaPessoaJuridica(6002, 303155, "99999999999999");
@@ -495,5 +508,4 @@ public class Main {
 }
 
 // PAREI NA...
-// https://dev.java/learn/classes-objects/more-on-classes/#wrapping-up
-// FAZER OS EXEMPLOS
+// https://dev.java/learn/classes-objects/nested-classes/#nested
