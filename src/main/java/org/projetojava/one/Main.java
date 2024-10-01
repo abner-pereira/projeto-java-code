@@ -508,4 +508,4 @@ public class Main {
 }
 
 // PAREI NA...
-// https://dev.java/learn/classes-objects/nested-classes/#nested
+// https://dev.java/learn/classes-objects/nested-classes/#anonymous
