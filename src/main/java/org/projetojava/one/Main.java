@@ -466,6 +466,13 @@ public class Main {
                         ", ID: " + Operacao.getID()
         );
 
+        //Nested Classes (Classes Aninhadas)
+        Nested nestedOne = new Nested();
+        nestedOne.showNivel();
+        nestedOne.showNivelStatic();
+        nestedOne.showNivelLocal();
+        nestedOne.showNivelAnonimo();
+
         //Herança
         ContaPessoaFísica ctFisica = new ContaPessoaFísica(6001, 202035, "77777777777");
         ContaPessoaJuridica ctJuridica = new ContaPessoaJuridica(6002, 303155, "99999999999999");
