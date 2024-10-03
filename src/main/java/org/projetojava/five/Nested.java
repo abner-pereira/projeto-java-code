@@ -3,6 +3,14 @@ package org.projetojava.five;
 public class Nested {
     private int nivel = 0;
 
+    /*
+     Visibilidade Classe Aninhada:
+     + public
+     + protected
+     + package-private (no explicit modifier)
+     + private
+     */
+
     //Classe Concreta -> COM Acesso aos FIELDS privados
     class NivelOne {
         void getNivel() {
@@ -28,10 +36,10 @@ public class Nested {
     }
 
     //Interface
-    interface Nivel {
-        void getNivel();
+    private interface Nivel {
+        public void getNivel();
 
-        void addNivel();
+        public void addNivel();
     }
 
     public void showNivelLocal() {
@@ -58,12 +66,12 @@ public class Nested {
         Nivel anonimo = new Nivel() {
             @Override
             public void getNivel() {
-                nivel++;
+                System.out.println("Nivel atual => Classe Anônima: " + nivel);
             }
 
             @Override
             public void addNivel() {
-                System.out.println("Nivel atual => Classe Anônima: " + nivel);
+                nivel++;
             }
         };
 

@@ -473,6 +473,10 @@ public class Main {
         nestedOne.showNivelLocal();
         nestedOne.showNivelAnonimo();
 
+        //Enums
+        Constants.getMesDescr(Constants.MesesNum.MAR);
+        Constants.getMesDescr(Constants.MesesNum.SET);
+
         //Herança
         ContaPessoaFísica ctFisica = new ContaPessoaFísica(6001, 202035, "77777777777");
         ContaPessoaJuridica ctJuridica = new ContaPessoaJuridica(6002, 303155, "99999999999999");
@@ -515,4 +519,4 @@ public class Main {
 }
 
 // PAREI NA...
-// https://dev.java/learn/classes-objects/nested-classes/#anonymous
+// https://dev.java/learn/classes-objects/enums/#intro
