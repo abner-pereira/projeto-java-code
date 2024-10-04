@@ -6,8 +6,6 @@ import org.projetojava.two.*;
 import org.projetojava.four.*;
 import org.projetojava.five.*;
 
-import java.math.BigInteger;
-
 public class Main {
     public static void main(String[] args) {
         //Variável
@@ -467,15 +465,15 @@ public class Main {
         );
 
         //Nested Classes (Classes Aninhadas)
-        Nested nestedOne = new Nested();
-        nestedOne.showNivel();
-        nestedOne.showNivelStatic();
-        nestedOne.showNivelLocal();
-        nestedOne.showNivelAnonimo();
+        Niveis niveis = new Niveis();
+        niveis.showNivel();
+        niveis.showNivelStatic();
+        niveis.showNivelLocal();
+        niveis.showNivelAnonimo();
 
         //Enums
-        Constants.getMesDescr(Constants.MesesNum.MAR);
-        Constants.getMesDescr(Constants.MesesNum.SET);
+        Mes.getMesDescr(Mes.MesesNum.MAR);
+        Mes.getMesDescr(Mes.MesesNum.SET);
 
         //Herança
         ContaPessoaFísica ctFisica = new ContaPessoaFísica(6001, 202035, "77777777777");
@@ -519,4 +517,4 @@ public class Main {
 }
 
 // PAREI NA...
-// https://dev.java/learn/classes-objects/enums/#intro
+// https://dev.java/learn/records/#more-learning

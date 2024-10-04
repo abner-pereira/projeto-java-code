@@ -14,7 +14,7 @@ enum Meses {
         this.descricao = nome;
     }
 
-    public String getDescrocao() {
+    public String getDescricao() {
         return this.descricao;
     }
 }

@@ -1,6 +1,6 @@
 package org.projetojava.five;
 
-public class Nested {
+public class Niveis {
     private int nivel = 0;
 
     /*
@@ -21,9 +21,9 @@ public class Nested {
 
     //Classe Static -> SEM Acesso aos FIELDS privados
     static class NivelStaticOne {
-        void getNivel(Nested nested) {
-            nested.nivel++;
-            System.out.println("Nivel atual => Classe Aninhada Estático: " + nested.nivel);
+        void getNivel(Niveis niveis) {
+            niveis.nivel++;
+            System.out.println("Nivel atual => Classe Aninhada Estático: " + niveis.nivel);
         }
     }
 
