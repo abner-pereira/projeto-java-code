@@ -517,4 +517,4 @@ public class Main {
 }
 
 // PAREI NA...
-// https://dev.java/learn/records/#more-learning
+// https://dev.java/learn/records/
