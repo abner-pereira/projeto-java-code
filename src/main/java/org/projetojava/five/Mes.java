@@ -23,6 +23,6 @@ public abstract class Mes {
             case MesesNum.DEZ -> Meses.DEZ.getDescricao();
         };
 
-        System.out.println("ENUM => Mẽs informado: " + mesDesc);
+        System.out.println("Mẽs Descritivo => Mẽs informado: " + mesDesc);
     }
 }

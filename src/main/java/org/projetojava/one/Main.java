@@ -5,6 +5,7 @@ import org.projetojava.three.*;
 import org.projetojava.two.*;
 import org.projetojava.four.*;
 import org.projetojava.five.*;
+import org.projetojava.six.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -471,9 +472,16 @@ public class Main {
         niveis.showNivelLocal();
         niveis.showNivelAnonimo();
 
-        //Enums
+        //Enums (Constants Groups)
         Mes.getMesDescr(Mes.MesesNum.MAR);
         Mes.getMesDescr(Mes.MesesNum.SET);
+
+        //Record (Model Immutable Data)
+        Calcado tenis = new Calcado(Calcado.Tipo.TENIS, "Nike", "Gols", 35);
+        Calcado sapato = new Calcado(Calcado.Tipo.SAPATO, "Romam", "Luxx", 42);
+
+        tenis.getDetalhes();
+        sapato.getDetalhes();
 
         //Herança
         ContaPessoaFísica ctFisica = new ContaPessoaFísica(6001, 202035, "77777777777");
