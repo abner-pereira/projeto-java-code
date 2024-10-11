@@ -465,6 +465,11 @@ public class Main {
                         ", ID: " + Operacao.getID()
         );
 
+        //Multi-argumentos
+        Numero sorteio = new Numero(15, 34, 26, 33, 56, 44, 2);
+        sorteio.sortDados();
+        sorteio.showDados();
+
         //Nested Classes (Classes Aninhadas)
         Niveis niveis = new Niveis();
         niveis.showNivel();
@@ -525,4 +530,4 @@ public class Main {
 }
 
 // PAREI NA...
-// https://dev.java/learn/records/
+// https://dev.java/learn/numbers-strings/numbers/#intro
