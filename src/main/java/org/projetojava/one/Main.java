@@ -7,6 +7,9 @@ import org.projetojava.four.*;
 import org.projetojava.five.*;
 import org.projetojava.six.*;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 public class Main {
     public static void main(String[] args) {
         //Variável
@@ -65,6 +68,26 @@ public class Main {
 
         System.out.println("Nome Completo: " + varStringC);
         System.out.println("Posição 2 (15): " + varIntStr);
+
+        Integer numInt1 = Integer.valueOf("50");
+        Integer numInt2 = Integer.valueOf("55");
+        String compRes =
+                switch (numInt1.compareTo(numInt2)) {
+                    case 0 -> "Igual";
+                    case 1 -> "Maior";
+                    default -> "Menor";
+                };
+
+        System.out.format("Comparativo: %d é " + compRes + " %d%n", numInt1, numInt2);
+
+        Float numFloat = Float.valueOf("7254.67");
+        DecimalFormat decFmt = new DecimalFormat();
+        decFmt.applyLocalizedPattern("###.###,##");
+
+        System.out.println("Novo Salário: R$ " + decFmt.format(numFloat));
+
+        Character oneLetter = Character.valueOf('y');
+        System.out.println("Letra Escolhida: " + Character.toUpperCase(oneLetter));
 
         //Operadores(+, -, /, *, %)
         int varNum1 = 10;
@@ -530,4 +553,4 @@ public class Main {
 }
 
 // PAREI NA...
-// https://dev.java/learn/numbers-strings/numbers/#intro
+// https://dev.java/learn/numbers-strings/strings/
