@@ -69,22 +69,43 @@ public class Main {
         System.out.println("Nome Completo: " + varStringC);
         System.out.println("Posição 2 (15): " + varIntStr);
 
-        Integer numInt1 = Integer.valueOf("50");
-        Integer numInt2 = Integer.valueOf("55");
-        String compRes =
-                switch (numInt1.compareTo(numInt2)) {
-                    case 0 -> "Igual";
-                    case 1 -> "Maior";
-                    default -> "Menor";
-                };
+        //Printf e Format
+        char[] nomeCEO = {'P', 'e', 'd', 'r', 'o'};
 
-        System.out.format("Comparativo: %d é " + compRes + " %d%n", numInt1, numInt2);
+        System.out.printf("Apresentação: \'Seu nome é %s. Ele tem %d anos de experiência\'%n",
+                String.valueOf(nomeCEO),
+                Integer.valueOf("18"));
 
-        Float numFloat = Float.valueOf("7254.67");
-        DecimalFormat decFmt = new DecimalFormat();
-        decFmt.applyLocalizedPattern("###.###,##");
+        System.out.printf("Nº Sorteado: %010d%n",
+                Integer.valueOf("654321"));
 
-        System.out.println("Novo Salário: R$ " + decFmt.format(numFloat));
+        System.out.format("CPF do Soteado: %011d%n",
+                Integer.valueOf("1234567"));
+
+        System.out.printf("Horário do Sorteiro: %tH:%tM%n",
+                System.currentTimeMillis(),
+                System.currentTimeMillis());
+
+        System.out.format("Dia do Sorteiro: %td de %tB de %tY%n",
+                System.currentTimeMillis(),
+                System.currentTimeMillis(),
+                System.currentTimeMillis());
+
+        //DecimalFormat
+        DecimalFormat fmtNum = (DecimalFormat) DecimalFormat.getInstance();
+        fmtNum.applyPattern("00000");
+
+        System.out.printf("Nº Serviço: %s%n",
+                fmtNum.format(Integer.valueOf("185")));
+
+        fmtNum.applyPattern("###%");
+
+        System.out.format("Percentual de Prêmios: %s%n",
+                fmtNum.format(Float.valueOf("0.25f")));
+
+        System.out.printf("Conversão Númerica: %.1f%n",
+                Math.abs(Float.valueOf("-15.89f")
+                        .floatValue()));
 
         Character oneLetter = Character.valueOf('y');
         System.out.println("Letra Escolhida: " + Character.toUpperCase(oneLetter));
