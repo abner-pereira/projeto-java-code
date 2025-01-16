@@ -12,6 +12,28 @@ import java.text.NumberFormat;
 
 public class Main {
     public static void main(String[] args) {
+        //Estudos/Exercícios Curso de Android
+        cursoAndroid();
+        //Estudo com base na Documentação
+        estudoDocumentacao();
+    }
+
+    public static void cursoAndroid() {
+        //Exercicios Curso Android
+        Carro carroA = new Carro("BMW 320i", 4);
+        Carro carroB = new Carro("Toyota Hilux SR", 4);
+
+        carroA.acelerar();
+        carroB.acelerar(5);
+
+        Moto motoA = new Moto("CG 150", 2);
+        Moto motoB = new Moto("Honda Biz", 2);
+
+        motoA.acelerar();
+        motoB.acelerar(10);
+    }
+
+    public static void estudoDocumentacao() {
         //Variável
         String nome = "Julio";
         Integer idade = 25;
@@ -23,12 +45,6 @@ public class Main {
         final String CAPITAL = "Tóquio";
 
         System.out.println("Capital: " + CAPITAL + ", Nota Turismo: " + MAX_NOTA);
-
-        //VAR - Variaveis locais (Sem Tipagem)
-        var nomeCompleto = nome + " Santos";
-        var anoNasc = java.time.Year.now().getValue() - idade;
-
-        System.out.println("Nome Completo: " + nomeCompleto + ", Ano Nascimento: " + anoNasc);
 
         //Tipos primitivos
         byte varByte = 120;
@@ -59,56 +75,77 @@ public class Main {
 
         System.out.println(varStringT);
 
-        //Wrapper Classes
-        String varStringC = "Antônio Silva";
-        varStringC = varStringC.toUpperCase();
+        //Array simples
+        String[] varPecas = {"Prato", "Colher", "Garfo", "Guarda-napo"};
 
-        Integer varInterC = 15;
-        String varIntStr = varInterC.toString().substring(1, 2);
+        String[] varPecasRev = new String[4]; //Mesmo tamanho acima
+        varPecasRev[0] = "Guarda-napo";
+        varPecasRev[1] = "Garfo";
+        varPecasRev[2] = "Colher";
+        varPecasRev[3] = "Prato";
 
-        System.out.println("Nome Completo: " + varStringC);
-        System.out.println("Posição 2 (15): " + varIntStr);
+        System.out.println("Itens para Comprar: " + varPecas[1] + " e " + varPecasRev[1]);
 
-        //Printf e Format
-        char[] nomeCEO = {'P', 'e', 'd', 'r', 'o'};
+        //Array multidimensional
+        String[][] varClientes = {
+                {"A001", "Carlos Alvarenga"},
+                {"A002", "Monica Santos"},
+                {"C003", "Neide Mello"},
+        };
 
-        System.out.printf("Apresentação: \'Seu nome é %s. Ele tem %d anos de experiência\'%n",
-                String.valueOf(nomeCEO),
-                Integer.valueOf("18"));
+        String[][] varClientesRev = new String[3][2];
+        varClientesRev[0] = varClientesRev[2];
+        varClientesRev[1] = varClientesRev[0];
+        varClientesRev[2] = varClientesRev[1];
 
-        System.out.printf("Nº Sorteado: %010d%n",
-                Integer.valueOf("654321"));
+        System.out.println("Cliente Premiado => ID: " + varClientes[2][0] + ", Nome: " + varClientes[2][1]);
 
-        System.out.format("CPF do Soteado: %011d%n",
-                Integer.valueOf("1234567"));
+        //Array Manipulação
+        char[] varAlfa = {'A', 'B', 'C', 'D', 'E'};
+        char[] varAlfaPlus = {'F', 'G', 'H'};
+        char[] varAlfaSix = new char[6];
 
-        System.out.printf("Horário do Sorteiro: %tH:%tM%n",
-                System.currentTimeMillis(),
-                System.currentTimeMillis());
+        //Copiando Array (Classe System)
+        System.arraycopy(varAlfa, 2, varAlfaSix, 0, 3);
+        System.arraycopy(varAlfaPlus, 0, varAlfaSix, 3, 3);
 
-        System.out.format("Dia do Sorteiro: %td de %tB de %tY%n",
-                System.currentTimeMillis(),
-                System.currentTimeMillis(),
-                System.currentTimeMillis());
+        String varStrAlfa = "";
+        for (char letra : varAlfaSix) {
+            varStrAlfa += letra + "\t";
+        }
 
-        //DecimalFormat
-        DecimalFormat fmtNum = (DecimalFormat) DecimalFormat.getInstance();
-        fmtNum.applyPattern("00000");
+        System.out.println("Letras Escolhidas: " + varStrAlfa);
 
-        System.out.printf("Nº Serviço: %s%n",
-                fmtNum.format(Integer.valueOf("185")));
+        //Métodos Estáticos da Classe Arrays
+        //Busca
+        int varPos = java.util.Arrays.binarySearch(varAlfaSix, 'G');
 
-        fmtNum.applyPattern("###%");
+        System.out.println("Letra Encontrada: " +
+                (varPos < 0 ? "Error" : varAlfaSix[varPos]));
 
-        System.out.format("Percentual de Prêmios: %s%n",
-                fmtNum.format(Float.valueOf("0.25f")));
+        //Cópia
+        char[] varAlfaTen = java.util.Arrays.copyOf(varAlfaSix, 10);
+        varAlfaTen[6] = 'M';
+        varAlfaTen[7] = 'L';
+        varAlfaTen[8] = 'N';
+        varAlfaTen[9] = 'A';
 
-        System.out.printf("Conversão Númerica: %.1f%n",
-                Math.abs(Float.valueOf("-15.89f")
-                        .floatValue()));
+        //Conversão para String
+        String varElemTen = java.util.Arrays.toString(varAlfaTen);
 
-        Character oneLetter = Character.valueOf('y');
-        System.out.println("Letra Escolhida: " + Character.toUpperCase(oneLetter));
+        System.out.println("Novas Letras: " + varElemTen);
+
+        //Ordenação
+        java.util.Arrays.sort(varAlfaTen);
+        varElemTen = java.util.Arrays.toString(varAlfaTen);
+
+        System.out.println("Novas Letras Ordenadas: " + varElemTen);
+
+        //VAR - Variaveis locais (Sem Tipagem)
+        var nomeCompleto = nome + " Santos";
+        var anoNasc = java.time.Year.now().getValue() - idade;
+
+        System.out.println("Nome Completo: " + nomeCompleto + ", Ano Nascimento: " + anoNasc);
 
         //Operadores(+, -, /, *, %)
         int varNum1 = 10;
@@ -255,72 +292,6 @@ public class Main {
         String varDnSexual = varSexo == 'M' ? "Masculino" : "Feminino";
 
         System.out.println("Sexo Definido: " + varDnSexual);
-
-        //Array simples
-        String[] varPecas = {"Prato", "Colher", "Garfo", "Guarda-napo"};
-
-        String[] varPecasRev = new String[4]; //Mesmo tamanho acima
-        varPecasRev[0] = "Guarda-napo";
-        varPecasRev[1] = "Garfo";
-        varPecasRev[2] = "Colher";
-        varPecasRev[3] = "Prato";
-
-        System.out.println("Itens para Comprar: " + varPecas[1] + " e " + varPecasRev[1]);
-
-        //Array multidimensional
-        String[][] varClientes = {
-                {"A001", "Carlos Alvarenga"},
-                {"A002", "Monica Santos"},
-                {"C003", "Neide Mello"},
-        };
-
-        String[][] varClientesRev = new String[3][2];
-        varClientesRev[0] = varClientesRev[2];
-        varClientesRev[1] = varClientesRev[0];
-        varClientesRev[2] = varClientesRev[1];
-
-        System.out.println("Cliente Premiado => ID: " + varClientes[2][0] + ", Nome: " + varClientes[2][1]);
-
-        //Array Manipulação
-        char[] varAlfa = {'A', 'B', 'C', 'D', 'E'};
-        char[] varAlfaPlus = {'F', 'G', 'H'};
-        char[] varAlfaSix = new char[6];
-
-        //Copiando Array (Classe System)
-        System.arraycopy(varAlfa, 2, varAlfaSix, 0, 3);
-        System.arraycopy(varAlfaPlus, 0, varAlfaSix, 3, 3);
-
-        String varStrAlfa = "";
-        for (char letra : varAlfaSix) {
-            varStrAlfa += letra + "\t";
-        }
-
-        System.out.println("Letras Escolhidas: " + varStrAlfa);
-
-        //Métodos Estáticos da Classe Arrays
-        //Busca
-        int varPos = java.util.Arrays.binarySearch(varAlfaSix, 'G');
-
-        System.out.println("Letra Encontrada: " +
-                (varPos < 0 ? "Error" : varAlfaSix[varPos]));
-
-        //Cópia
-        char[] varAlfaTen = java.util.Arrays.copyOf(varAlfaSix, 10);
-        varAlfaTen[6] = 'M';
-        varAlfaTen[7] = 'L';
-        varAlfaTen[8] = 'N';
-        varAlfaTen[9] = 'A';
-
-        //Conversão para String
-        String varElemTen = java.util.Arrays.toString(varAlfaTen);
-
-        System.out.println("Novas Letras: " + varElemTen);
-
-        //Ordenação
-        java.util.Arrays.sort(varAlfaTen);
-        varElemTen = java.util.Arrays.toString(varAlfaTen);
-
-        System.out.println("Novas Letras Ordenadas: " + varElemTen);
 
         //Loops (While, Do-while e For)
         //While
@@ -532,6 +503,71 @@ public class Main {
         tenis.getDetalhes();
         sapato.getDetalhes();
 
+        //Wrapper Classes
+        String varStringC = "Antônio Silva";
+        varStringC = varStringC.toUpperCase();
+
+        System.out.println("Wrapper => Nome Completo: " + varStringC);
+
+        Integer varInterC = Integer.valueOf(15);
+        String varIntStr = varInterC.toString().substring(1, 2);
+
+        System.out.println("Wrapper => Posição 2 (15): " + varIntStr);
+
+        Character varCharC = Character.valueOf('a');
+        String varCharStr = varCharC.toString().toUpperCase();
+
+        System.out.println("Wrapper => Carro com a Letra: " + varCharStr);
+
+        //Printf e Format
+        char[] nomeCEO = {'P', 'e', 'd', 'r', 'o'};
+
+        System.out.printf("Format => Apresentação: \'Seu nome é %s. Ele tem %d anos de experiência\'%n",
+                String.valueOf(nomeCEO),
+                Integer.valueOf("18"));
+
+        System.out.printf("Format => Nº Sorteado: %010d%n",
+                Integer.valueOf("654321"));
+
+        System.out.format("Format => CPF do Soteado: %011d%n",
+                Integer.valueOf("1234567"));
+
+        System.out.printf("Format => Horário do Sorteiro: %tH:%tM%n",
+                System.currentTimeMillis(),
+                System.currentTimeMillis());
+
+        System.out.format("Format => Dia do Sorteiro: %td de %tB de %tY%n",
+                System.currentTimeMillis(),
+                System.currentTimeMillis(),
+                System.currentTimeMillis());
+
+        //DecimalFormat
+        DecimalFormat fmtNum = (DecimalFormat) DecimalFormat.getInstance();
+        fmtNum.applyPattern("00000");
+
+        System.out.printf("Format => Nº Serviço: %s%n",
+                fmtNum.format(Integer.valueOf("185")));
+
+        fmtNum.applyPattern("###%");
+
+        System.out.format("Format => Percentual de Prêmios: %s%n",
+                fmtNum.format(Float.valueOf("0.25f")));
+
+        System.out.printf("Format => Conversão Númerica: %.1f%n",
+                Math.abs(Float.valueOf("-15.89f")
+                        .floatValue()));
+
+        //Escape Sequence (\t, \b, \n, \r, \f, \', \", \\)
+        String strEscape = "Conforme diz o ditado:\n\t\"O hábito faz o monge\";\r" +
+                "\n\t\"Para bom entendedor, meia palavra basta\";\r" +
+                "\n\t\"Deus ajuda quem cedo madruga\".\r";
+
+        System.out.print("Escape => " + strEscape);
+
+// PAREI NA...
+// https://dev.java/learn/numbers-strings/strings/#creating
+
+/* -- Reaproveitar quando chegar nos pontos abaixo
         //Herança
         ContaPessoaFísica ctFisica = new ContaPessoaFísica(6001, 202035, "77777777777");
         ContaPessoaJuridica ctJuridica = new ContaPessoaJuridica(6002, 303155, "99999999999999");
@@ -557,21 +593,6 @@ public class Main {
         System.out.println("Manifero 1 => " + aniHomem.showDado());
         System.out.println("Manifero 2 => " + aniCanguru.showDado());
         System.out.println("Manifero 3 => " + aniEquidna.showDado());
-
-        //Exercicios Curso Android
-        Carro carroA = new Carro("BMW 320i", 4);
-        Carro carroB = new Carro("Toyota Hilux SR", 4);
-
-        carroA.acelerar();
-        carroB.acelerar(5);
-
-        Moto motoA = new Moto("CG 150", 2);
-        Moto motoB = new Moto("Honda Biz", 2);
-
-        motoA.acelerar();
-        motoB.acelerar(10);
+*/
     }
 }
-
-// PAREI NA...
-// https://dev.java/learn/numbers-strings/strings/
