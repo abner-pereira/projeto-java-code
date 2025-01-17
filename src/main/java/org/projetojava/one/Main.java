@@ -519,7 +519,7 @@ public class Main {
 
         System.out.println("Wrapper => Carro com a Letra: " + varCharStr);
 
-        //Printf e Format
+        //Printf e Format (% - java.util.Formatter)
         char[] nomeCEO = {'P', 'e', 'd', 'r', 'o'};
 
         System.out.printf("Format => Apresentação: \'Seu nome é %s. Ele tem %d anos de experiência\'%n",
@@ -564,8 +564,38 @@ public class Main {
 
         System.out.print("Escape => " + strEscape);
 
+        //String Format
+        String strFormat = String.format("Todos diziam:%n\t\"O menino cresceu..." +
+                        "já não é mais como uma criança\"\r" +
+                        "%n\t\"...completou %d anos\"\r",
+                Integer.valueOf("18").intValue());
+
+        System.out.println("String Format => " + strFormat);
+
+        //Strings -> Numbers
+        String numStrN1 = "75.7f";
+        String numStrN2 = "71.2f";
+        float numNotaPri = Float.parseFloat(numStrN1); //Primitivo
+        Float numNotaObj = Float.valueOf(numStrN2);    //Objeto
+
+        int numCompFloat = Float.compare(numNotaPri, numNotaObj.floatValue());
+
+        strFormat = String.format("%.1f %s %.1f",
+                numNotaPri,
+                switch (numCompFloat) {
+                    case 0:
+                        yield "é IGUAL a";
+                    case 1:
+                        yield "é MAIOR do que";
+                    default:
+                        yield "é MENOR do que";
+                },
+                numNotaObj.floatValue());
+
+        System.out.println("String Converte => " + strFormat);
+
 // PAREI NA...
-// https://dev.java/learn/numbers-strings/strings/#creating
+// https://dev.java/learn/numbers-strings/string-builders/#class
 
 /* -- Reaproveitar quando chegar nos pontos abaixo
         //Herança
