@@ -594,8 +594,43 @@ public class Main {
 
         System.out.println("String Converte => " + strFormat);
 
+        //String Builders
+        StringBuilder fraseBuilder = new StringBuilder(10);
+        fraseBuilder.append("Gil Palmeira");
+
+        System.out.println("String Builder => Capacidade: " + fraseBuilder.capacity() +
+                ", Tamanho: " + fraseBuilder.length());
+
+        fraseBuilder.insert(fraseBuilder.lastIndexOf("P"), "Santos");
+        fraseBuilder.delete(fraseBuilder.lastIndexOf("P"), fraseBuilder.length());
+
+        System.out.println("String Builder => Nome Completo: " + fraseBuilder);
+
+        //Autoboxing and Unboxing (Conversão)
+        //Autoboxing -> Primitive Types => Object Wrapper Classes
+        int diaAniversario = 15;
+        Integer diaPremio = diaAniversario; //Integer.valueOf(diaAniversario)
+
+        System.out.println("Autoboxing => Dia de Resgate do Prêmio: " + diaPremio);
+
+        double saldoInicial = 15.89;
+        Double saldoFinal = saldoInicial; //Double.valueOf(saldoInicial)
+
+        System.out.println("Autoboxing => Saldo Final: " + saldoFinal);
+
+        //Unboxing -> Object Wrapper Classes => Primitive Types
+        Float percSalarial = Float.valueOf(25.00f);
+        float percAumento = percSalarial; //percSalarial.floatValue()
+
+        System.out.println("Unboxing => Percentual de Aumento: " + percAumento);
+
+        Long timeMaxSeg = Long.valueOf(60);
+        long timeMaxMin = timeMaxSeg; //timeMaxSeg.longValue()
+
+        System.out.println("Unboxing => Minuto Máximo: " + timeMaxMin);
+
 // PAREI NA...
-// https://dev.java/learn/numbers-strings/string-builders/#class
+// https://dev.java/learn/inheritance/what-is-inheritance/#intro
 
 /* -- Reaproveitar quando chegar nos pontos abaixo
         //Herança
