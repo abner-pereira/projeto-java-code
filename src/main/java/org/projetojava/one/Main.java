@@ -3,12 +3,10 @@ package org.projetojava.one;
 import org.projetojava.android.*;
 import org.projetojava.three.*;
 import org.projetojava.two.*;
-import org.projetojava.four.*;
 import org.projetojava.five.*;
 import org.projetojava.six.*;
 
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 
 public class Main {
     public static void main(String[] args) {
@@ -629,11 +627,7 @@ public class Main {
 
         System.out.println("Unboxing => Minuto Máximo: " + timeMaxMin);
 
-// PAREI NA...
-// https://dev.java/learn/inheritance/what-is-inheritance/#intro
-
-/* -- Reaproveitar quando chegar nos pontos abaixo
-        //Herança
+        //Inheritance (Herança)
         ContaPessoaFísica ctFisica = new ContaPessoaFísica(6001, 202035, "77777777777");
         ContaPessoaJuridica ctJuridica = new ContaPessoaJuridica(6002, 303155, "99999999999999");
 
@@ -646,6 +640,23 @@ public class Main {
 
         System.out.println("Conta Física => CPF: " + ctFisicaDado[0] + "; Saldo: " + ctFisicaDado[3]);
         System.out.println("Conta Jurídica => CNPJ: " + ctJuridicaDado[0] + "; Saldo: " + ctJuridicaDado[3]);
+
+        //Multiple Inheritance (Herança Múltipla)
+        Son onlySon = Son.factory("Mônica", "Anderson", "Rosangela");
+        Father resFather = (Father) onlySon;
+        Mother resMother = (Mother) onlySon;
+/*
+        System.out.println("Herança => Nome: " + //resFather.getNmSon() +
+                "; Responsável Pai: " + resFather.getNmFather());
+
+        System.out.println("Herança => Nome: " + //resMother.getNmSon() +
+                "; Responsável Mãe: " + resMother.getNmMother());
+*/
+
+// PAREI NA...
+// https://dev.java/learn/inheritance/what-is-inheritance/#multiple-inheritance
+
+/* -- Reaproveitar quando chegar nos pontos abaixo
 
         //Classe Abstrata vs Classe Concreta
         //Classe Abstrata --> Não pode ser instanciada
