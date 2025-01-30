@@ -1,7 +1,11 @@
 package org.projetojava.one;
 
 import org.projetojava.android.*;
+//Executar Métodos Estáticos SEM chamar a Classe
+import static org.projetojava.three.Son.*;
+
 import org.projetojava.three.*;
+import org.projetojava.three.Son;
 import org.projetojava.two.*;
 import org.projetojava.five.*;
 import org.projetojava.six.*;
@@ -638,23 +642,22 @@ public class Main {
         String[] ctFisicaDado = ctFisica.getDados();
         String[] ctJuridicaDado = ctJuridica.getDados();
 
-        System.out.println("Conta Física => CPF: " + ctFisicaDado[0] + "; Saldo: " + ctFisicaDado[3]);
-        System.out.println("Conta Jurídica => CNPJ: " + ctJuridicaDado[0] + "; Saldo: " + ctJuridicaDado[3]);
+        System.out.println("Conta Física => CPF: " + ctFisicaDado[0] + ", Saldo: " + ctFisicaDado[3]);
+        System.out.println("Conta Jurídica => CNPJ: " + ctJuridicaDado[0] + ", Saldo: " + ctJuridicaDado[3]);
 
         //Multiple Inheritance (Herança Múltipla)
-        Son onlySon = Son.factory("Mônica", "Anderson", "Rosangela");
-        Father resFather = (Father) onlySon;
-        Mother resMother = (Mother) onlySon;
-/*
-        System.out.println("Herança => Nome: " + //resFather.getNmSon() +
-                "; Responsável Pai: " + resFather.getNmFather());
+        Son onlySon = factory("Mônica", "Anderson", "Rosangela"); //Classe Son - Importação Estática
+        InterFather resFather = (InterFather) onlySon;
+        InterMother resMother = (InterMother) onlySon;
 
-        System.out.println("Herança => Nome: " + //resMother.getNmSon() +
-                "; Responsável Mãe: " + resMother.getNmMother());
-*/
+        System.out.println("Herança => Nome: " + onlySon.getNmSon() +
+                ", Responsável Pai: " + resFather.getNmFather());
+
+        System.out.println("Herança => Nome: " + onlySon.getNmSon() +
+                ", Responsável Mãe: " + resMother.getNmMother());
 
 // PAREI NA...
-// https://dev.java/learn/inheritance/what-is-inheritance/#multiple-inheritance
+// https://dev.java/learn/inheritance/overriding/#instance-methods
 
 /* -- Reaproveitar quando chegar nos pontos abaixo
 
