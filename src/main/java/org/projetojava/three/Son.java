@@ -27,4 +27,21 @@ public class Son implements InterFather, InterMother {
     public String getNmMother() {
         return this.nmMother;
     }
+
+    @Override
+    public String getTexto(String nmParent) {
+        //Chamando métodos DEFAULT da Interface
+        String msgText1 = InterFather.super.getTexto(this.nmFather);
+        String msgText2 = InterMother.super.getTexto(this.nmMother);
+
+        StringBuilder msgTexto = new StringBuilder();
+        msgTexto.append(msgText1);
+        msgTexto.append(" | ");
+        msgTexto.append(msgText2);
+        return msgTexto.toString();
+    }
+
+    public String getParent() {
+        return this.getTexto("");
+    }
 }

@@ -635,7 +635,7 @@ public class Main {
         ContaPessoaFísica ctFisica = new ContaPessoaFísica(6001, 202035, "77777777777");
         ContaPessoaJuridica ctJuridica = new ContaPessoaJuridica(6002, 303155, "99999999999999");
 
-        //Polimorfismo
+        //Polymorphism
         ctFisica.addSaldo(1000.50);
         ctJuridica.addSaldo(2075.50);
 
@@ -656,8 +656,10 @@ public class Main {
         System.out.println("Herança => Nome: " + onlySon.getNmSon() +
                 ", Responsável Mãe: " + resMother.getNmMother());
 
+        System.out.println("Herança (@Override) => " + onlySon.getParent());
+
 // PAREI NA...
-// https://dev.java/learn/inheritance/overriding/#instance-methods
+// https://dev.java/learn/inheritance/objects/#object-class
 
 /* -- Reaproveitar quando chegar nos pontos abaixo
 

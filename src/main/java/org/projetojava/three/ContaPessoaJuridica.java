@@ -1,6 +1,7 @@
 package org.projetojava.three;
 
-public class ContaPessoaJuridica extends Conta {
+//Final -> NÃO permite a criação de Herança a partir da classe atual
+public final class ContaPessoaJuridica extends Conta {
     private long noCNPJ;
 
     public ContaPessoaJuridica(int agencia, int conta, String noCNPJ) {
@@ -16,7 +17,8 @@ public class ContaPessoaJuridica extends Conta {
         super.addSaldo(saldo * percFinal);
     }
 
-    public String[] getDados() {
+    //Final -> NÃO permite a sobreposição do método caso haja Herança
+    public final String[] getDados() {
         String[] resDado = {
                 Long.toString(this.noCNPJ),
                 Integer.toString(this.conta),
