@@ -1,14 +1,14 @@
 package org.projetojava.one;
 
 import org.projetojava.android.*;
-//Executar Métodos Estáticos SEM chamar a Classe
-import static org.projetojava.three.Son.*;
-
-import org.projetojava.three.*;
-import org.projetojava.three.Son;
 import org.projetojava.two.*;
+import org.projetojava.three.*;
+import org.projetojava.four.*;
 import org.projetojava.five.*;
 import org.projetojava.six.*;
+
+//Executar Métodos Estáticos SEM chamar a Classe
+import static org.projetojava.three.Son.*;
 
 import java.text.DecimalFormat;
 
@@ -658,22 +658,23 @@ public class Main {
 
         System.out.println("Herança (@Override) => " + onlySon.getParent());
 
-// PAREI NA...
-// https://dev.java/learn/inheritance/objects/#object-class
-
-/* -- Reaproveitar quando chegar nos pontos abaixo
-
-        //Classe Abstrata vs Classe Concreta
+        //Classe Abstrata e Classe Concreta
         //Classe Abstrata --> Não pode ser instanciada
         //Animal genAnimal = new Animal("Gato");       //Error
         Manifero aniHomem = new Manifero("Ser Humano", 3);
         Manifero aniCanguru = new Manifero("Canguru", 1);
         Manifero aniEquidna = new Manifero("Equidna", 0);
 
-        //Interface
-        System.out.println("Manifero 1 => " + aniHomem.showDado());
-        System.out.println("Manifero 2 => " + aniCanguru.showDado());
-        System.out.println("Manifero 3 => " + aniEquidna.showDado());
-*/
+        System.out.println("Object Class (Super) => toString: " + aniHomem.toString());
+
+        System.out.println("Object Class (Super) => equals: " +
+                (aniCanguru.equals(aniEquidna) == true ? "Obj. Iguais" : "Obj. Diferentes"));
+
+        System.out.println("Object Class (Super) => hashCode Obj.1: " + aniCanguru.hashCode() +
+                ", hashCode Obj.2: " + aniEquidna.hashCode());
+
+// PAREI NA...
+// https://dev.java/learn/inheritance/abstract-classes/#abstract-classes-methods
+
     }
 }
