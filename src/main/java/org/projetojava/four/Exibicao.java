@@ -17,5 +17,6 @@ package org.projetojava.four;
 */
 
 interface Exibicao {
+    //Abstract (Implicitamente)
     public String showDado();
 }

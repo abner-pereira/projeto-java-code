@@ -11,4 +11,7 @@ public abstract class Animal {
     protected String getNome() {
         return this.nome;
     }
+
+    //Método Abstrato
+    protected abstract String getModelInfo();
 }

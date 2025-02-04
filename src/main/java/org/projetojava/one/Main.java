@@ -673,6 +673,9 @@ public class Main {
         System.out.println("Object Class (Super) => hashCode Obj.1: " + aniCanguru.hashCode() +
                 ", hashCode Obj.2: " + aniEquidna.hashCode());
 
+        //Abstract vs Interface
+        System.out.println("Abstract vs Interface => " + aniHomem.showDado());
+
 // PAREI NA...
 // https://dev.java/learn/inheritance/abstract-classes/#abstract-classes-methods
 

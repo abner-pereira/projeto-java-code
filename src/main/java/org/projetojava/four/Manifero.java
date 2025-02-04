@@ -23,7 +23,14 @@ public class Manifero extends Animal implements Exibicao {
     //Sobreposição (Interface)
     @Override
     public String showDado() {
-        return "Info Animal: " + this.getNome() + " - " + this.classif;
+        String txtFormato = getModelInfo();
+        return String.format(txtFormato, this.getNome(), this.classif);
+    }
+
+    //Sobreposição (Abstract Class)
+    @Override
+    protected String getModelInfo() {
+        return "Info Animal: %s - %s";
     }
 
     //Sobreposição (Object)
