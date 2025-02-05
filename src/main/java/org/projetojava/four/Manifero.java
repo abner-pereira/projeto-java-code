@@ -1,7 +1,7 @@
 package org.projetojava.four;
 
-//Classe Concreta com Aplicação de Interface
-public class Manifero extends Animal implements Exibicao {
+//Classe Concreta -> Possui e Implementa Interface(s)
+public class Manifero extends Animal {
     String classif;
 
     public Manifero(String nome, int classif) {

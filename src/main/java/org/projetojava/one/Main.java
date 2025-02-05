@@ -675,9 +675,18 @@ public class Main {
 
         //Abstract vs Interface
         System.out.println("Abstract vs Interface => " + aniHomem.showDado());
+        System.out.println("Abstract vs Interface => " + aniEquidna.showDado());
+
+        //Interface
+        Notebook note1 = new Notebook(1);
+        Notebook note2 = new Notebook(4);
+
+        System.out.print("Interface Avançada => " + note1.getQuantNucleo());
+        System.out.print("Interface Avançada => " + note2.getQuantNucleo());
+        System.out.println("Interface Avançada => Instâncias Criadas: " + Computador.getInstObj());
 
 // PAREI NA...
-// https://dev.java/learn/inheritance/abstract-classes/#abstract-classes-methods
+// https://dev.java/learn/interfaces/examples/#creating-relatable
 
     }
 }
