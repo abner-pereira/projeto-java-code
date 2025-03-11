@@ -685,8 +685,21 @@ public class Main {
         System.out.print("Interface Avançada => " + note2.getQuantNucleo());
         System.out.println("Interface Avançada => Instâncias Criadas: " + Computador.getInstObj());
 
-// PAREI NA...
-// https://dev.java/learn/interfaces/examples/#creating-relatable
 
+        AviaoCargueiro Antonov = new AviaoCargueiro(405);
+        Antonov.setTipoCombustivel(Aeronave.Combustivel.DISEL);
+        System.out.println("Avião: Tipo Misto? " + (Antonov.isPassageiro() == true ? "Sim" : "Não"));
+
+        AviaoMisto Airbus380 = new AviaoMisto(800);
+        Airbus380.setTipoCombustivel(Aeronave.Combustivel.GASOLINA);
+        System.out.println("Avião: Tipo Misto? " + (Airbus380.isPassageiro() == true ? "Sim" : "Não"));
+
+// PAREI NA...
+// https://dev.java/learn/interfaces/examples/#integrating-default-methods
+
+// Interface e extensão de interface (Evolving Interfaces)
+// Padrão método (Default Methods)
+// Interface e extensão de interface com Padrão métoodo (Extending Interfaces That Contain Default Methods)
+// Estático método (Static Methods)
     }
 }
