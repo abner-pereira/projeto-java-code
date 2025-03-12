@@ -14,7 +14,14 @@ public class AviaoCargueiro implements Aviao {
         return false;
     }
 
+    @Override
     public void setTipoCombustivel(Aeronave.Combustivel tipoCombustivel) {
         this.combustivel = tipoCombustivel;
+    }
+
+    @Override
+    public String getInfo() {
+        return String.format("Avião Misto: %s, Combustível: %s, Tot.Carga: %.2f Toneladas",
+                (this.isPassageiro() == true ? "Sim" : "Não"), this.combustivel.getDesc(), this.totCarga);
     }
 }

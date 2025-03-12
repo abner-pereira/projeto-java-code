@@ -681,25 +681,36 @@ public class Main {
         Notebook note1 = new Notebook(1);
         Notebook note2 = new Notebook(4);
 
-        System.out.print("Interface Avançada => " + note1.getQuantNucleo());
-        System.out.print("Interface Avançada => " + note2.getQuantNucleo());
-        System.out.println("Interface Avançada => Instâncias Criadas: " + Computador.getInstObj());
+        System.out.print("Interface => " + note1.getQuantNucleo());
+        System.out.print("Interface => " + note2.getQuantNucleo());
+        System.out.println("Interface => Instâncias Criadas: " + Computador.getInstObj());
 
-
-        AviaoCargueiro Antonov = new AviaoCargueiro(405);
+        AviaoCargueiro Antonov = new AviaoCargueiro(405.7);
         Antonov.setTipoCombustivel(Aeronave.Combustivel.DISEL);
-        System.out.println("Avião: Tipo Misto? " + (Antonov.isPassageiro() == true ? "Sim" : "Não"));
 
         AviaoMisto Airbus380 = new AviaoMisto(800);
         Airbus380.setTipoCombustivel(Aeronave.Combustivel.GASOLINA);
-        System.out.println("Avião: Tipo Misto? " + (Airbus380.isPassageiro() == true ? "Sim" : "Não"));
+
+        System.out.println("Interface Avançada => " + Antonov.getInfo());
+        System.out.println("Interface Avançada => " + Airbus380.getInfo());
+
+        Processo procInterface = ProcessoFisico.factory("E50.2024-90-5", 1478754);
+        System.out.println("Interface as a Type => " + procInterface.getInfo());
+
+        procInterface = ProcessoJuridico.factory("E50.2024-75-1", 100036789);
+        System.out.println("Interface as a Type => " + procInterface.getInfo());
+
+        procInterface = new Processo() {
+            private String numProcesso = "E65.2024-09-3";
+            private String idPassaport = "USA-2011-A45.69";
+
+            public String getInfo() {
+                return "Nr. Processo: " + this.numProcesso + ", Passaporte: " + this.idPassaport;
+            }
+        };
+        System.out.println("Interface as a Type => " + procInterface.getInfo());
 
 // PAREI NA...
-// https://dev.java/learn/interfaces/examples/#integrating-default-methods
-
-// Interface e extensão de interface (Evolving Interfaces)
-// Padrão método (Default Methods)
-// Interface e extensão de interface com Padrão métoodo (Extending Interfaces That Contain Default Methods)
-// Estático método (Static Methods)
+// https://dev.java/learn/generics/
     }
 }
