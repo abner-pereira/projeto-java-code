@@ -710,7 +710,9 @@ public class Main {
         };
         System.out.println("Interface as a Type => " + procInterface.getInfo());
 
+        //Generics
+
 // PAREI NA...
-// https://dev.java/learn/generics/
+// https://dev.java/learn/generics/intro/#bounded-types
     }
 }
