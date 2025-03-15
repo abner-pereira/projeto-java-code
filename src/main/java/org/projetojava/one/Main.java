@@ -6,6 +6,7 @@ import org.projetojava.three.*;
 import org.projetojava.four.*;
 import org.projetojava.five.*;
 import org.projetojava.six.*;
+import org.projetojava.seven.*;
 
 //Executar Métodos Estáticos SEM chamar a Classe
 import static org.projetojava.three.Son.*;
@@ -711,8 +712,14 @@ public class Main {
         System.out.println("Interface as a Type => " + procInterface.getInfo());
 
         //Generics
+        ListaGenerica<String> listMercado = new ListaGenerica<String>(1);
+        String msgLista = listMercado.addItem("Macarrão") ? "Item Adicionado" : "Erro na Inserção";
+        System.out.printf("Generics => Add. Item -> Msg: %s%n", msgLista);
+
+        msgLista = listMercado.addItem("Vinagre") ? "Item Adicionado" : "Erro na Inserção";
+        System.out.printf("Generics => Add. Item -> Msg: %s%n", msgLista);
 
 // PAREI NA...
-// https://dev.java/learn/generics/intro/#bounded-types
+// https://dev.java/learn/generics/intro/#why-using-generics
     }
 }
