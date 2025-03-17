@@ -712,12 +712,18 @@ public class Main {
         System.out.println("Interface as a Type => " + procInterface.getInfo());
 
         //Generics
-        ListaGenerica<String> listMercado = new ListaGenerica<String>(1);
-        String msgLista = listMercado.addItem("Macarrão") ? "Item Adicionado" : "Erro na Inserção";
-        System.out.printf("Generics => Add. Item -> Msg: %s%n", msgLista);
+        ListaGenerica<String> listMercado = ListaGenerica.<String>factory(1);
+        String itemMercado = "Macarrão";
+        String msgLista = listMercado.addItem(itemMercado) ? "Item Adicionado" : "Erro na Inserção";
+        System.out.printf("Generics => Item: %s -> Msg: %s%n", itemMercado, msgLista);
 
-        msgLista = listMercado.addItem("Vinagre") ? "Item Adicionado" : "Erro na Inserção";
-        System.out.printf("Generics => Add. Item -> Msg: %s%n", msgLista);
+        itemMercado = "Vinagre";
+        msgLista = listMercado.addItem(itemMercado) ? "Item Adicionado" : "Erro na Inserção";
+        System.out.printf("Generics => Item: %s -> Msg: %s%n", itemMercado, msgLista);
+
+        itemMercado = "Macarrão";
+        msgLista = listMercado.removeItem(String.valueOf(itemMercado)) ? "Item Removido" : "Erro na Remoção";
+        System.out.printf("Generics => Item: %s -> Msg: %s%n", itemMercado, msgLista);
 
 // PAREI NA...
 // https://dev.java/learn/generics/intro/#why-using-generics
