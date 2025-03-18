@@ -1,6 +1,7 @@
 package org.projetojava.one;
 
 import org.projetojava.android.*;
+
 import org.projetojava.two.*;
 import org.projetojava.three.*;
 import org.projetojava.four.*;
@@ -715,17 +716,39 @@ public class Main {
         ListaGenerica<String> listMercado = ListaGenerica.<String>factory(1);
         String itemMercado = "Macarrão";
         String msgLista = listMercado.addItem(itemMercado) ? "Item Adicionado" : "Erro na Inserção";
-        System.out.printf("Generics => Item: %s -> Msg: %s%n", itemMercado, msgLista);
+        System.out.printf("Generics => Item: %s, Msg: %s%n", itemMercado, msgLista);
 
         itemMercado = "Vinagre";
         msgLista = listMercado.addItem(itemMercado) ? "Item Adicionado" : "Erro na Inserção";
-        System.out.printf("Generics => Item: %s -> Msg: %s%n", itemMercado, msgLista);
+        System.out.printf("Generics => Item: %s, Msg: %s%n", itemMercado, msgLista);
 
         itemMercado = "Macarrão";
         msgLista = listMercado.removeItem(String.valueOf(itemMercado)) ? "Item Removido" : "Erro na Remoção";
-        System.out.printf("Generics => Item: %s -> Msg: %s%n", itemMercado, msgLista);
+        System.out.printf("Generics => Item: %s, Msg: %s%n", itemMercado, msgLista);
+
+        ListaGenerica<ItemGenerico> listEletronico = ListaGenerica.<ItemGenerico>factory(5);
+        DataEletronico dataEletronico = new DataEletronico("Smartphone", 745.99);
+        ItemGenerico<Integer, DataEletronico> itemEletronico =
+                new ItemGenerico<Integer, DataEletronico>(10, dataEletronico);
+        listEletronico.addItem(itemEletronico);
+
+        dataEletronico = new DataEletronico("MacBook Air", 9500.39);
+        itemEletronico = new ItemGenerico<Integer, DataEletronico>(20, dataEletronico);
+        listEletronico.addItem(itemEletronico);
+
+        itemEletronico = listEletronico.getItem(0);
+        System.out.printf("Generics List => Cód. Item: %d, Nome: %s, Preço: %.2f%n",
+                itemEletronico.getKey(),
+                itemEletronico.getValue().nome(),
+                itemEletronico.getValue().preco());
+
+        itemEletronico = listEletronico.getItem(1);
+        System.out.printf("Generics List => Cód. Item: %d, Nome: %s, Preço: %.2f%n",
+                itemEletronico.getKey(),
+                itemEletronico.getValue().nome(),
+                itemEletronico.getValue().preco());
 
 // PAREI NA...
-// https://dev.java/learn/generics/intro/#why-using-generics
+// https://dev.java/learn/generics/type-inference/#type-inference
     }
 }

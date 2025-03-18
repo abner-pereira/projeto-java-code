@@ -3,6 +3,12 @@ package org.projetojava.seven;
 import java.util.ArrayList;
 
 /*
+A type variable can be any non-primitive type you specify:
++ any class type,
++ any interface type,
++ any array type,
++ or even another type variable.
+
 The most commonly used type parameter names are:
 + E - Element (used extensively by the Java Collections Framework)
 + K - Key
@@ -12,7 +18,9 @@ The most commonly used type parameter names are:
 + S, U, V etc. - 2nd, 3rd, 4th types
 */
 
-//<T> --> Tipo Genérico
+/**
+ * @param <T> Tipo Genérico
+ */
 public class ListaGenerica<T> {
     private ArrayList<T> lista;
     private int size;
