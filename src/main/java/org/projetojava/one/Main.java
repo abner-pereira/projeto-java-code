@@ -748,7 +748,9 @@ public class Main {
                 itemEletronico.getValue().nome(),
                 itemEletronico.getValue().preco());
 
+        //Generics -> Wildcards
+
 // PAREI NA...
-// https://dev.java/learn/generics/type-inference/#type-inference
+// https://dev.java/learn/generics/wildcards/#capture
     }
 }
