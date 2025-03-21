@@ -749,8 +749,11 @@ public class Main {
                 itemEletronico.getValue().preco());
 
         //Generics -> Wildcards
+        //Unbounded Wildcards -> Ok
+        //Upper Bounded Wildcards -> Falta
+        //Lower Bounded Wildcards -> Falta
 
 // PAREI NA...
-// https://dev.java/learn/generics/wildcards/#capture
+// https://dev.java/learn/generics/wildcards/#upper-bounded
     }
 }
