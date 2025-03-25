@@ -748,12 +748,30 @@ public class Main {
                 itemEletronico.getValue().nome(),
                 itemEletronico.getValue().preco());
 
-        //Generics -> Wildcards
-        //Unbounded Wildcards -> Ok
-        //Upper Bounded Wildcards -> Falta
-        //Lower Bounded Wildcards -> Falta
+        //Generics -> Wildcards (<?>, <? extends Class> and <? super Class>)
+        ListaWildcardsFut listaEsporteUp = new ListaWildcardsFut(ListaWildcardsFut.tipoBounded.UPPER);
+        listaEsporteUp.addItem(new FutebolGen());
+        listaEsporteUp.addItem(new FutsalGen());
+
+        for (int idxFut = 0; idxFut < listaEsporteUp.getList().size(); idxFut++) {
+            FutebolGen regFutebol = (FutebolGen) listaEsporteUp.getList().get(idxFut);
+
+            System.out.println("Generics Wildcards => Upper Bounded -> ID Time: " +
+                    regFutebol.getIdTime());
+        }
+
+        ListaWildcardsFut listaEsporteLow = new ListaWildcardsFut(ListaWildcardsFut.tipoBounded.LOWER);
+        listaEsporteLow.addItem(new FutebolGen());
+        listaEsporteLow.addItem(new FutsalGen());
+
+        for (int idxFut = 0; idxFut < listaEsporteLow.getList().size(); idxFut++) {
+            FutebolGen regFutebol = (FutebolGen) listaEsporteLow.getList().get(idxFut);
+
+            System.out.println("Generics Wildcards => Lower Bounded -> ID Time: " +
+                    regFutebol.getIdTime());
+        }
 
 // PAREI NA...
-// https://dev.java/learn/generics/wildcards/#upper-bounded
+// https://dev.java/learn/generics/type-erasure/
     }
 }
