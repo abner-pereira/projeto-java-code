@@ -17,4 +17,9 @@
 - Exceptions
 - Refactoring from the Imperative to the Functional Style
 
+### Mastering the API (Advanced)
+
+- The Collections Framework
+- Virtual Threads
+
 #### Font: [Dev Java](https://dev.java/learn/)
