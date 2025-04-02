@@ -2,24 +2,24 @@
 
 ### Getting to Know the Language
 
-- Objects, Classes, Interfaces, Packages, and Inheritance
-- Java Language Basics
-- Classes and Objects
-- Using Record to Model Immutable Data
-- Numbers and Strings
-- Inheritance
-- Interfaces
-- Generics
-- Lambda Expressions
-- Annotations
-- Packages
-- Using Pattern Matching
-- Exceptions
-- Refactoring from the Imperative to the Functional Style
+- [X] Objects, Classes, Interfaces, Packages, and Inheritance
+- [X] Java Language Basics
+- [X] Classes and Objects
+- [X] Using Record to Model Immutable Data
+- [X] Numbers and Strings
+- [X] Inheritance
+- [X] Interfaces
+- [X] Generics
+- [ ] Lambda Expressions
+- [ ] Annotations [only read]
+- [ ] Packages [only read]
+- [ ] Using Pattern Matching
+- [ ] Exceptions
+- [ ] Refactoring from the Imperative to the Functional Style [only read]
 
 ### Mastering the API (Advanced)
 
-- The Collections Framework
-- Virtual Threads
+- [ ] The Collections Framework
+- [ ] Virtual Threads
 
 #### Font: [Dev Java](https://dev.java/learn/)
