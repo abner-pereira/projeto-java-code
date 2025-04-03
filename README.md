@@ -11,8 +11,8 @@
 - [X] Interfaces
 - [X] Generics
 - [ ] Lambda Expressions
-- [ ] Annotations [only read]
-- [ ] Packages [only read]
+- [X] Annotations [only read]
+- [X] Packages [only read but applicated]
 - [ ] Using Pattern Matching
 - [ ] Exceptions
 - [ ] Refactoring from the Imperative to the Functional Style [only read]
