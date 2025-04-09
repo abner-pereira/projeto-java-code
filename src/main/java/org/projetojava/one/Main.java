@@ -8,11 +8,13 @@ import org.projetojava.four.*;
 import org.projetojava.five.*;
 import org.projetojava.six.*;
 import org.projetojava.seven.*;
+import org.projetojava.eight.*;
 
 //Executar Métodos Estáticos SEM chamar a Classe
 import static org.projetojava.three.Son.*;
 
 import java.text.DecimalFormat;
+import java.util.function.Supplier;
 
 public class Main {
     public static void main(String[] args) {
@@ -772,11 +774,25 @@ public class Main {
         }
 
         //Lambda Expressions
-        //--> Voltar AQUI depois
+        //Lambda Method Implementation
+        Baseball baseball = () -> {
+            return Baseball.getPonto();
+        };
 
-        //Exceptions
+        System.out.println("Lambda Expressions => Pontos Batedor: " + baseball.getPontBatedor());
+        System.out.println("Lambda Expressions => Pontos Arremessador: " + Baseball.getPontoArremessador());
+
+        //Package java.util.function
+        Supplier<String> cpNlv1 = () -> "LV.1";
+        Supplier<String> cpNlv2 = () -> "LV.2";
+        Supplier<Boolean> compStr = () -> cpNlv1.get().equals(cpNlv2.get());
+
+        System.out.printf("Lambda Expressions => Str. Orig: %s, Str. Dest.: %s, Igual: %s%n",
+                cpNlv1.get(),
+                cpNlv2.get(),
+                compStr.get() ? "Sim" : "Não");
 
 // PAREI NA...
-// https://dev.java/learn/exceptions/
+// https://dev.java/learn/lambdas/functional-interfaces/#predicate
     }
 }
