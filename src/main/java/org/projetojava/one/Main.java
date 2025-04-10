@@ -14,7 +14,7 @@ import org.projetojava.eight.*;
 import static org.projetojava.three.Son.*;
 
 import java.text.DecimalFormat;
-import java.util.function.Supplier;
+import java.util.function.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -782,17 +782,45 @@ public class Main {
         System.out.println("Lambda Expressions => Pontos Batedor: " + baseball.getPontBatedor());
         System.out.println("Lambda Expressions => Pontos Arremessador: " + Baseball.getPontoArremessador());
 
-        //Package java.util.function
+        class BaseballGame {
+            private interface Placar {
+                String show();
+            }
+
+            public static String initGame(String time1, String time2) {
+                //Variáveis são vistas como CONSTANTES dentro da Lambda
+                int ptsTime1 = Integer.parseInt(String.valueOf(Math.random() * 100).substring(0, 1));
+                int ptsTime2 = Integer.parseInt(String.valueOf(Math.random() * 100).substring(0, 1));
+
+                Placar placar = () -> String.format("Placar: %s |%d| vs |%d| %s", time1, ptsTime1, ptsTime2, time2);
+                return placar.show();
+            }
+        }
+
+        System.out.println("Lambda Expressions => " + BaseballGame.initGame("Boston Red Sox", "New York Yankees"));
+
+        //Lambda - Pacote java.util.function
         Supplier<String> cpNlv1 = () -> "LV.1";
         Supplier<String> cpNlv2 = () -> "LV.2";
-        Supplier<Boolean> compStr = () -> cpNlv1.get().equals(cpNlv2.get());
+        BiPredicate<String, String> compStr = (str1, str2) -> str1.equals(str2);
 
         System.out.printf("Lambda Expressions => Str. Orig: %s, Str. Dest.: %s, Igual: %s%n",
                 cpNlv1.get(),
                 cpNlv2.get(),
-                compStr.get() ? "Sim" : "Não");
+                compStr.test(cpNlv1.get(), cpNlv2.get()) ? "Sim" : "Não");
+
+        //Primária
+        //the suppliers: do not take any argument, return something
+        //the consumers: take an argument, do not return anything
+        //the predicates: take an argument, return a boolean
+        //the functions: take an argument, return something
+
+        //Secundária
+        //the biconsumers
+        //the bipredicates
+        //the bifunctions
 
 // PAREI NA...
-// https://dev.java/learn/lambdas/functional-interfaces/#predicate
+// https://dev.java/learn/lambdas/functional-interfaces/#more-learning
     }
 }
