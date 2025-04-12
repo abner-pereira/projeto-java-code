@@ -800,6 +800,14 @@ public class Main {
         System.out.println("Lambda Expressions => " + BaseballGame.initGame("Boston Red Sox", "New York Yankees"));
 
         //Lambda - Pacote java.util.function
+        //+ Primary (zero or one argument)
+        //Suppliers:  do not take any argument, return something
+        //Consumers:  take an argument, do not return anything
+        //Predicates: take an argument, return a boolean
+        //Functions:  take an argument, return something
+        //
+        //+ Secondary (two arguments)
+        //Biconsumers, Bipredicates and Bifunctions
         Supplier<String> cpNlv1 = () -> "LV.1";
         Supplier<String> cpNlv2 = () -> "LV.2";
         BiPredicate<String, String> compStr = (str1, str2) -> str1.equals(str2);
@@ -809,18 +817,22 @@ public class Main {
                 cpNlv2.get(),
                 compStr.test(cpNlv1.get(), cpNlv2.get()) ? "Sim" : "Não");
 
-        //Primária
-        //the suppliers: do not take any argument, return something
-        //the consumers: take an argument, do not return anything
-        //the predicates: take an argument, return a boolean
-        //the functions: take an argument, return something
+        BiFunction<Double, Double, Double> opcSum = (num1, num2) -> num1 + num2;
+        final Double ntTriOne = Double.valueOf(3.5);
+        final Double ntTriTwo = Double.valueOf(2.7);
+        final Double ntTriThree = Double.valueOf(3.1);
 
-        //Secundária
-        //the biconsumers
-        //the bipredicates
-        //the bifunctions
+        Double ntTriEnd = ntTriOne;
+        ntTriEnd = opcSum.apply(ntTriEnd, ntTriTwo);
+        ntTriEnd = opcSum.apply(ntTriEnd, ntTriThree);
+
+        System.out.printf("Lambda Expressions => NT1: %.1f | NT2: %.1f | NT3: %.1f | NTF: %.1f%n",
+                ntTriOne,
+                ntTriTwo,
+                ntTriThree,
+                ntTriEnd);
 
 // PAREI NA...
-// https://dev.java/learn/lambdas/functional-interfaces/#more-learning
+// https://dev.java/learn/lambdas/method-references/
     }
 }
