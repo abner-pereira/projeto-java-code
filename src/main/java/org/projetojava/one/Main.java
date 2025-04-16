@@ -714,7 +714,7 @@ public class Main {
         };
         System.out.println("Interface as a Type => " + procInterface.getInfo());
 
-        //Generics
+        //Generics (Basic)
         ListaGenerica<String> listMercado = ListaGenerica.<String>factory(1);
         String itemMercado = "Macarrão";
         String msgLista = listMercado.addItem(itemMercado) ? "Item Adicionado" : "Erro na Inserção";
@@ -773,7 +773,7 @@ public class Main {
                     regFutebol.getIdTime());
         }
 
-        //Lambda Expressions
+        //Lambda Expressions (Basic)
         //Lambda Method Implementation
         Baseball baseball = () -> {
             return Baseball.getPonto();
@@ -832,7 +832,25 @@ public class Main {
                 ntTriThree,
                 ntTriEnd);
 
+        //Combining Lambda Expressions
+        Predicate<String> chkEstadoVazio = (pNome) -> !pNome.isEmpty();
+        Predicate<String> chkEstadoLength = (pNome) -> pNome.equalsIgnoreCase("RJ");
+        Predicate<String> chkEstado = chkEstadoLength.and(chkEstadoVazio);
+
+        Predicate<Integer> chkNGratuidade = (pIdade) -> pIdade > 17 && pIdade < 65;
+
+        BiPredicate<String, Integer> chkDadoPred = (pNome, pIdade) ->
+                chkEstado.test(pNome) && chkNGratuidade.test(pIdade);
+
+        final String chkEstadoPred = "SP";
+        final Integer chkIdadePred = 18;
+
+        System.out.println("Lambda Expressions => " +
+                "Cidade: " + chkEstadoPred +
+                ", Idade: " + chkIdadePred +
+                ", Gratuidade: " + (chkDadoPred.test(chkEstadoPred, chkIdadePred) ? "Sim" : "Não"));
+
 // PAREI NA...
-// https://dev.java/learn/lambdas/method-references/
+// https://dev.java/learn/lambdas/writing-comparators/
     }
 }
