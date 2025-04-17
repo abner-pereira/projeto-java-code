@@ -14,6 +14,7 @@ import org.projetojava.eight.*;
 import static org.projetojava.three.Son.*;
 
 import java.text.DecimalFormat;
+import java.util.StringTokenizer;
 import java.util.function.*;
 
 public class Main {
@@ -812,7 +813,7 @@ public class Main {
         Supplier<String> cpNlv2 = () -> "LV.2";
         BiPredicate<String, String> compStr = (str1, str2) -> str1.equals(str2);
 
-        System.out.printf("Lambda Expressions => Str. Orig: %s, Str. Dest.: %s, Igual: %s%n",
+        System.out.printf("Lambda Expressions (java.util.function) => Str. Orig: %s, Str. Dest.: %s, Igual: %s%n",
                 cpNlv1.get(),
                 cpNlv2.get(),
                 compStr.test(cpNlv1.get(), cpNlv2.get()) ? "Sim" : "Não");
@@ -826,7 +827,7 @@ public class Main {
         ntTriEnd = opcSum.apply(ntTriEnd, ntTriTwo);
         ntTriEnd = opcSum.apply(ntTriEnd, ntTriThree);
 
-        System.out.printf("Lambda Expressions => NT1: %.1f | NT2: %.1f | NT3: %.1f | NTF: %.1f%n",
+        System.out.printf("Lambda Expressions (java.util.function) => NT1: %.1f | NT2: %.1f | NT3: %.1f | NTF: %.1f%n",
                 ntTriOne,
                 ntTriTwo,
                 ntTriThree,
@@ -845,10 +846,28 @@ public class Main {
         final String chkEstadoPred = "SP";
         final Integer chkIdadePred = 18;
 
-        System.out.println("Lambda Expressions => " +
+        System.out.println("Lambda Expressions (java.util.function) => " +
                 "Cidade: " + chkEstadoPred +
                 ", Idade: " + chkIdadePred +
                 ", Gratuidade: " + (chkDadoPred.test(chkEstadoPred, chkIdadePred) ? "Sim" : "Não"));
+
+        //Lambda Expressions as Method References
+        //+ Types: Static, Bound, Unbound and Constructor
+        Function<String, VeiculoLambda> vclCarroLambda = VeiculoLambda::factory; //Static
+        VeiculoLambda vclCarro = vclCarroLambda.apply("HJU3059");
+
+        Supplier<String> plcCarroLambda = vclCarro::getPlaca; //Bound
+        final String plcCarro = plcCarroLambda.get();
+
+        System.out.println("Lambda Expressions (Static and Bound) => Placa: " + plcCarro);
+
+        Function<String, VeiculoLambda> vclMotoLambda = VeiculoLambda::new; //Constructor
+        VeiculoLambda vclMoto = vclMotoLambda.apply("JLF7645");
+
+        Function<VeiculoLambda, String> plcMotoLambda = VeiculoLambda::getPlaca; //Unbound
+        final String plcMoto = plcMotoLambda.apply(vclMoto);
+
+        System.out.println("Lambda Expressions (Unbound and Constructor) => Placa: " + plcMoto);
 
 // PAREI NA...
 // https://dev.java/learn/lambdas/writing-comparators/
