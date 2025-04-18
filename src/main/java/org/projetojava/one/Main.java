@@ -14,6 +14,7 @@ import org.projetojava.eight.*;
 import static org.projetojava.three.Son.*;
 
 import java.text.DecimalFormat;
+import java.util.Comparator;
 import java.util.StringTokenizer;
 import java.util.function.*;
 
@@ -775,7 +776,7 @@ public class Main {
         }
 
         //Lambda Expressions (Basic)
-        //Lambda Method Implementation
+        //Implementação de Método Lambda
         Baseball baseball = () -> {
             return Baseball.getPonto();
         };
@@ -833,7 +834,7 @@ public class Main {
                 ntTriThree,
                 ntTriEnd);
 
-        //Combining Lambda Expressions
+        //Lambda Expressions (Combinações)
         Predicate<String> chkEstadoVazio = (pNome) -> !pNome.isEmpty();
         Predicate<String> chkEstadoLength = (pNome) -> pNome.equalsIgnoreCase("RJ");
         Predicate<String> chkEstado = chkEstadoLength.and(chkEstadoVazio);
@@ -851,7 +852,7 @@ public class Main {
                 ", Idade: " + chkIdadePred +
                 ", Gratuidade: " + (chkDadoPred.test(chkEstadoPred, chkIdadePred) ? "Sim" : "Não"));
 
-        //Lambda Expressions as Method References
+        //Lambda Expressions (Métodos de referência)
         //+ Types: Static, Bound, Unbound and Constructor
         Function<String, VeiculoLambda> vclCarroLambda = VeiculoLambda::factory; //Static
         VeiculoLambda vclCarro = vclCarroLambda.apply("HJU3059");
@@ -869,7 +870,51 @@ public class Main {
 
         System.out.println("Lambda Expressions (Unbound and Constructor) => Placa: " + plcMoto);
 
+        //Lambda Expressions (interface Comparator)
+        final String compStrTV1 = "Samsung";
+        final String compStrTV2 = "Sam";
+        Comparator<String> compStrLengthLambda = String::compareTo;
+
+        System.out.println("Lambda Expressions (Comparator) => TV1: " + compStrTV1 +
+                ", TV2: " + compStrTV2 +
+                ", Diferença: " + compStrLengthLambda.compare(compStrTV1, compStrTV2) + " (caracter)");
+
+        class PokemonLambda {
+            private String nome;
+            private String style = "Elétrico";
+            private Double forca;
+
+            PokemonLambda(String nome) {
+                this.nome = nome;
+                this.forca = Math.random() * 10;
+            }
+
+            public String getNome() {
+                return this.nome;
+            }
+
+            public String getStyle() {
+                return this.style;
+            }
+
+            public Double getForca() {
+                return this.forca;
+            }
+        }
+
+        Function<String, PokemonLambda> newPokeLambda = PokemonLambda::new;
+        Comparator<PokemonLambda> compPokeLambda = Comparator.comparing(PokemonLambda::getStyle)
+                .thenComparing(PokemonLambda::getForca);
+
+        final PokemonLambda compPoke1 = newPokeLambda.apply("Pikachu");
+        final PokemonLambda compPoke2 = newPokeLambda.apply("Raichu");
+        final int resPokeLambda = compPokeLambda.compare(compPoke1, compPoke2);
+
+        System.out.println("Lambda Expressions (Comparator) => Poke1: " + compPoke1.getNome() +
+                ", Poke2: " + compPoke2.getNome() +
+                ", Força: " + (resPokeLambda < 0 ? "Menor" : (resPokeLambda > 0 ? "Maior" : "Iguais")));
+
 // PAREI NA...
-// https://dev.java/learn/lambdas/writing-comparators/
+// https://dev.java/learn/annotations/
     }
 }
