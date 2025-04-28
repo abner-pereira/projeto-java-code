@@ -20,4 +20,4 @@
 
 - The Collections Framework
 
-#### Font: [Dev Java](https://dev.java/learn/)
+#### Fonte: [Dev Java](https://dev.java/learn/)
