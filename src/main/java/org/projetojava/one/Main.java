@@ -9,6 +9,7 @@ import org.projetojava.five.*;
 import org.projetojava.six.*;
 import org.projetojava.seven.*;
 import org.projetojava.eight.*;
+import org.projetojava.nine.*;
 
 //Executar Métodos Estáticos SEM chamar a Classe
 import static org.projetojava.three.Son.*;
@@ -913,6 +914,10 @@ public class Main {
         System.out.println("Lambda Expressions (Comparator) => Poke1: " + compPoke1.getNome() +
                 ", Poke2: " + compPoke2.getNome() +
                 ", Força: " + (resPokeLambda < 0 ? "Menor" : (resPokeLambda > 0 ? "Maior" : "Iguais")));
+
+        //Annotations (Basic)
+        Developer devJunior = Developer.factory("André", 3);
+        Developer devPleno = Developer.factory("Matias", 6);
 
 // PAREI NA...
 // https://dev.java/learn/annotations/
