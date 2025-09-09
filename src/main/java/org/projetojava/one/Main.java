@@ -916,10 +916,15 @@ public class Main {
                 ", Força: " + (resPokeLambda < 0 ? "Menor" : (resPokeLambda > 0 ? "Maior" : "Iguais")));
 
         //Annotations (Basic)
-        Developer devJunior = Developer.factory("André", 3);
-        Developer devPleno = Developer.factory("Matias", 6);
+        Developer devN1 = Developer.factory("André", 6);
+        Developer devN2 = Developer.factory("Matias", 8);
+        Developer devN3 = Developer.factory("João", 3);
+
+        System.out.printf("Annotations => Nome: %s, Nível: %s%n", devN1.getNome(), devN1.getNivelInfo());
+        System.out.printf("Annotations => Nome: %s, Nível: %s%n", devN2.getNome(), devN2.getNivelInfo());
+        System.out.printf("Annotations => Nome: %s, Nível: %s%n", devN3.getNome(), devN3.getNivelInfo());
 
 // PAREI NA...
-// https://dev.java/learn/annotations/
+// https://dev.java/learn/pattern-matching/
     }
 }

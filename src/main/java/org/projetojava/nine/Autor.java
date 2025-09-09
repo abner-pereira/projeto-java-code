@@ -1,11 +1,12 @@
 package org.projetojava.nine;
 
-import java.lang.annotation.*;
+import java.lang.annotation.Documented;
+import java.lang.annotation.Repeatable;
 
 //Documented - Obrigatório para a criação da Anotação
-//Target - Aplicação da Anotação
+//Repeatable - Definição de Repetição de Anotação
 @Documented
-@Target(ElementType.METHOD)
+@Repeatable(Modificador.class)
 public @interface Autor {
     String nome();
 
