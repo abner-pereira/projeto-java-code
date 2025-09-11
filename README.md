@@ -13,7 +13,7 @@
 - Lambda Expressions
 - Annotations
 - Packages
-- Using Pattern Matching
+- Using Pattern Matching (read only)
 - Exceptions
 
 ### Mastering the API (Advanced)
