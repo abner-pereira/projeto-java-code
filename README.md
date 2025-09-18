@@ -16,8 +16,4 @@
 - Using Pattern Matching (read only)
 - Exceptions
 
-### Mastering the API (Advanced)
-
-- The Collections Framework
-
 #### Fonte: [Dev Java](https://dev.java/learn/)
