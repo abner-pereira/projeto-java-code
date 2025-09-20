@@ -10,6 +10,7 @@ import org.projetojava.six.*;
 import org.projetojava.seven.*;
 import org.projetojava.eight.*;
 import org.projetojava.nine.*;
+import org.projetojava.ten.*;
 
 //Executar Métodos Estáticos SEM chamar a Classe
 import static org.projetojava.three.Son.*;
@@ -924,7 +925,47 @@ public class Main {
         System.out.printf("Annotations => Nome: %s, Nível: %s%n", devN2.getNome(), devN2.getNivelInfo());
         System.out.printf("Annotations => Nome: %s, Nível: %s%n", devN3.getNome(), devN3.getNivelInfo());
 
+        //Exceptions
+        //Try-Catch-Finally
+        String[] gamerCube = {""};
+        int posGamerCube = 0;
+
+        try {
+            new GameCube(gamerCube);
+        } catch (StringIndexOutOfBoundsException e) {
+            System.out.println("Exceptions => Msg: " + e.getMessage());
+        } finally {
+            posGamerCube++;
+            System.out.printf("Exceptions => Processo Nr.: %05d%n", posGamerCube);
+        }
+
+        //Agregação -> Multi-Catching
+        try {
+            gamerCube[0] = "Gamer Principal";
+            new GameCube(gamerCube).getGamerCube(posGamerCube);
+        } catch (StringIndexOutOfBoundsException | ArrayIndexOutOfBoundsException e) {
+            System.out.println("Exceptions => Msg: " + e.getMessage());
+        } finally {
+            posGamerCube++;
+            System.out.printf("Exceptions => Processo Nr.: %05d%n", posGamerCube);
+        }
+
+        //Recurso de Verificação-> Try-With-Resources / AutoCloseable or Closeable
+        gamerCube = new String[3];
+        gamerCube[0] = "Gamer Principal";
+        gamerCube[1] = "Gamer Staff";
+        gamerCube[2] = "Gamer Hacker";
+
+        try (GameCube gmCb = new GameCube(gamerCube)) {
+            System.out.println("Exceptions => Total de Gamers: " + gmCb.getTotGamers());
+        } catch (Exception e) {
+            System.out.println("Exceptions => Msg: " + e.getMessage());
+        } finally {
+            posGamerCube++;
+            System.out.printf("Exceptions => Processo Nr.: %05d%n", posGamerCube);
+        }
+
 // PAREI NA...
-// https://dev.java/learn/exceptions/catching-handling/ (Falta Exemplos)
+// https://dev.java/learn/exceptions/catching-handling/ ===> Rever AutoCloseable or Closeable
     }
 }
