@@ -964,8 +964,5 @@ public class Main {
             posGamerCube++;
             System.out.printf("Exceptions => Processo Nr.: %05d%n", posGamerCube);
         }
-
-// PAREI NA...
-// https://dev.java/learn/exceptions/catching-handling/ ===> Rever AutoCloseable or Closeable
     }
 }

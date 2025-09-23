@@ -16,4 +16,6 @@
 - Using Pattern Matching (read only)
 - Exceptions
 
-#### Fonte: [Dev Java](https://dev.java/learn/)
+#### Fonte:
++ [Dev Java - Guia](https://dev.java/learn/)
++ [Documentação - Java 21 LTS](https://docs.oracle.com/en/java/javase/21/)
